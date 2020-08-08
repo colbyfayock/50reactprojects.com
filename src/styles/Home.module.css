@@ -37,7 +37,7 @@
 /* Container */
 
 .container {
-  max-width: 50rem;
+  max-width: 60rem;
   text-align: center;
   padding: 0 2rem;
   margin: 0 auto;
@@ -55,17 +55,13 @@
 
 .container h2 {
   font-size: 5vw;
+  font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 900;
 }
 
-@media (max-width: 600px) {
-  .container h2 {
-    font-size: 10vw;
-  }
-}
-
 .container .subhead {
-  font-size: 3.8vw;
+  font-size: 3.2vw;
+  font-size: clamp(2rem, 3.2vw, 3rem);
 }
 
 @media (max-width: 600px) {
@@ -153,8 +149,12 @@
 }
 
 .hero .logo {
-  width: 10rem;
+  width: clamp(10rem, 18vw, 14rem);
   margin: 3rem auto;
+}
+
+.hero .logo svg {
+  width: 100%;
 }
 
 .hero .form {}
@@ -162,6 +162,27 @@
 @media (max-width: 600px) {
   .hero .form {
     padding: 0 2rem;
+  }
+}
+
+/* Preview */
+
+#preview {
+  overflow: hidden;
+}
+
+#preview img {
+  display: block;
+  width: 110%;
+  margin: 5em 0 -10rem;
+  transform: translateX(-5%);
+}
+
+@media (max-width: 600px) {
+  #preview img {
+    width: 100%;
+    margin: 3em 0 -7rem;
+    transform: translateX(0);
   }
 }
 
@@ -173,7 +194,7 @@
   text-align: left;
   list-style: none;
   padding: 0;
-  margin: 2em auto;
+  margin: 3em auto;
 }
 
 @media (max-width: 600px) {
@@ -185,6 +206,16 @@
 .topics li {
   font-weight: 700;
   line-height: 1.6;
+}
+
+/* Start */
+
+#start h2 {
+  margin-bottom: .6em;
+}
+
+#start .form {
+  margin-top: 4em;
 }
 
 /* Footer */

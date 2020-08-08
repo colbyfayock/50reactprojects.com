@@ -39,14 +39,16 @@ export default function Home() {
 
         </section>
 
-        <section className={styles.section}>
-          <div  className={styles.container}>
+        <section id={styles.preview} className={styles.section}>
+          <div className={styles.container}>
 
             <h2>Don&apos;t Ask &quot;What to Build&quot;</h2>
 
             <p className={styles.subhead}>
               Dive in with 50 projects complete with project briefs and wireframes!
             </p>
+
+            <img src="/images/50-react-projects-business-real-world-ecommerce-store.png" alt="" />
 
           </div>
         </section>
@@ -79,12 +81,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.section}>
+        <section id={styles.start} className={styles.section}>
           <div className={styles.container}>
 
             <h2>Start Doing Now</h2>
 
-            <p>
+            <p className={styles.subhead}>
               Get these projects right to your inbox for <strong>FREE</strong>!
             </p>
 
