@@ -28,7 +28,7 @@ export default function Home() {
         <meta property="og:type" content="book" />
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:image" content="https://deploy-preview-1--50reactprojects.netlify.app/images/50-react-projects-og.jpg" />
+        <meta property="og:image" content="https://50reactprojects.com/images/50-react-projects-og.jpg" />
         <meta property="og:image:width" content="2024" />
         <meta property="og:image:height" content="1012" />
         <meta property="og:image:alt" content="50 Projects for React & the Static Web - Learn by doing with this FREE ebook!" />
