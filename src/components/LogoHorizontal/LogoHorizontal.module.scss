@@ -1,0 +1,62 @@
+/*************
+ * Container *
+ *************/
+
+ .container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  strong,
+  span {
+    display: block;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  strong {
+    font-size: 2.4em;
+    line-height: 1;
+  }
+
+  svg {
+    flex-shrink: 0;
+    width: 4em;
+    margin-right: .5em;
+    margin-left: -.8em;
+  }
+
+}
+
+.body {
+  flex-shrink: 0;
+}
+
+/* Hero */
+
+.hero {
+
+  color: white;
+  background-color: var(--color-blue-dark);
+  padding-bottom: 1rem;
+
+  h1 {
+    font-size: clamp(1em, 5vw, 3.5em);
+    margin: 0;
+  }
+
+  .tagline {
+    text-align: center;
+    font-size: clamp(1.5em, 4vw, 3em);
+  }
+
+  .form {
+
+    @media (max-width: 600px) {
+      padding: 0 2rem;
+    }
+
+  }
+
+}

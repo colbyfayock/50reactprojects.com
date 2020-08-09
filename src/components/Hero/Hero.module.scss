@@ -1,0 +1,16 @@
+.hero {
+
+  color: white;
+  background-color: var(--color-blue-dark);
+  padding-bottom: 1rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  h1 {
+    font-size: clamp(1em, 5vw, 3.5em);
+    margin: 0;
+  }
+
+}

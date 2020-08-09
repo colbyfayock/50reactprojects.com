@@ -1,6 +1,6 @@
-import styles from '../styles/LogoHorizontal.module.scss';
+import styles from './LogoHorizontal.module.scss';
 
-import LogoReact from './LogoReact';
+import LogoReact from '../LogoReact';
 
 const LogoHorizontal = () => {
   return (

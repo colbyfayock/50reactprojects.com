@@ -14,7 +14,12 @@ import styles from '../styles/Home.module.scss';
 
 import * as gtag from '../lib/gtag';
 
+import Main from '../components/Main';
 import LogoHorizontal from '../components/LogoHorizontal';
+import Container from '../components/Container';
+import Section from '../components/Section';
+import Hero from '../components/Hero';
+import Footer from '../components/Footer';
 
 const TITLE = '50 Projects for React & the Static Web';
 const DESCRIPTION = 'Learn by doing with this FREE ebook! Dive in with 50 projects complete with project briefs and wireframes.';
@@ -54,13 +59,13 @@ export default function Home() {
         <link rel="icon" type="image/png" href="/images/favicon-512x512.png" />
       </Head>
 
-      <main className={styles.main}>
+      <Main>
 
-        <section className={styles.section} data-background-color="blue-dark">
+        <Section backgroundColor="blue-dark">
 
-          <div className={styles.hero}>
+          <Hero>
 
-            <h1 className={styles.title}>
+            <h1>
               <LogoHorizontal />
             </h1>
 
@@ -78,12 +83,12 @@ export default function Home() {
               <button>Get It Free</button>
             </form>
 
-          </div>
+          </Hero>
 
-        </section>
+        </Section>
 
-        <section id={styles.preview} className={styles.section}>
-          <div className={styles.container}>
+        <Section id={styles.preview}>
+          <Container>
 
             <h2>Don&apos;t Ask &quot;What to Build&quot;</h2>
 
@@ -94,11 +99,11 @@ export default function Home() {
 
             <img src="/images/50-react-projects-business-real-world-ecommerce-store.png" alt="Business and Real-world Example - Ecommerce Store" />
 
-          </div>
-        </section>
+          </Container>
+        </Section>
 
-        <section className={styles.section} data-background-color="blue">
-          <div className={styles.container}>
+        <Section backgroundColor="blue">
+          <Container>
 
             <h2>Learn by Doing</h2>
 
@@ -148,11 +153,11 @@ export default function Home() {
               Keep building and <strong>level up</strong>!
             </p>
 
-          </div>
-        </section>
+          </Container>
+        </Section>
 
-        <section id={styles.start} className={styles.section}>
-          <div className={styles.container}>
+        <Section id={styles.start}>
+          <Container>
 
             <h2>Start Doing Now</h2>
 
@@ -167,17 +172,12 @@ export default function Home() {
               <button id="footer" onClick={handleOnFormSubmit}>Get It Free</button>
             </form>
 
-          </div>
-        </section>
-      </main>
+          </Container>
+        </Section>
 
-      <footer className={styles.footer}>
-        <div className={styles.container}>
-          <p>
-            &copy; { new Date().getFullYear() }, <a href="https://twitter.com/colbyfayock">Colby Fayock</a>
-          </p>
-        </div>
-      </footer>
+      </Main>
+
+      <Footer />
     </>
   )
 }
