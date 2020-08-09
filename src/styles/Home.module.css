@@ -144,14 +144,8 @@
 }
 
 .hero h1 {
-  font-size: 5vw;
+  font-size: clamp(1.5em, 5vw, 3.5em);
   margin: 0;
-}
-
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 7vw;
-  }
 }
 
 .hero h1 strong,
@@ -162,7 +156,7 @@
 }
 
 .hero h1 strong {
-  font-size: 1.55em;
+  font-size: 2.4em;
   line-height: 1;
 }
 

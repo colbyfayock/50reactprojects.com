@@ -29,7 +29,7 @@ export default function Home() {
           <div className={styles.hero}>
 
             <h1 className={styles.title}>
-              <strong>50 React Projects</strong>
+              <strong>50 Projects</strong>
               <span>For React &amp; The Static Web</span>
             </h1>
 
