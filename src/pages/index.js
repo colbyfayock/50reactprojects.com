@@ -95,6 +95,9 @@ export default function Home() {
               <label className={styles.sronly} htmlFor="email">Email Address</label>
               <input type="email" name="email_address" placeholder="Email Address" />
               <button>Get It Free</button>
+              <p className={styles.version}>
+                v0.4
+              </p>
             </form>
 
           </Hero>
