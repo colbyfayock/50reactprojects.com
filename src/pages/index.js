@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import {
   FaBriefcase,
   FaAddressBook,
@@ -10,7 +10,9 @@ import {
   FaRegClone
 } from 'react-icons/fa';
 
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+
+import * as gtag from '../lib/gtag';
 
 import LogoReact from '../components/LogoReact';
 
@@ -18,6 +20,21 @@ const TITLE = '50 Projects for React & the Static Web';
 const DESCRIPTION = 'Learn by doing with this FREE ebook! Dive in with 50 projects complete with project briefs and wireframes.';
 
 export default function Home() {
+
+  function handleOnFormSubmit(e = {}) {
+    const { currentTarget } = e;
+
+    e.preventDefault();
+
+    gtag.event({
+      category: 'resource',
+      action: 'download',
+      label: currentTarget.id
+    });
+
+    currentTarget.submit();
+  }
+
   return (
     <>
       <Head>
@@ -52,7 +69,7 @@ export default function Home() {
               <LogoReact />
             </p>
 
-            <form className={styles.form} action="https://app.convertkit.com/forms/1539376/subscriptions" method="post">
+            <form id="hero" className={styles.form} action="https://app.convertkit.com/forms/1539376/subscriptions" method="post" onSubmit={handleOnFormSubmit}>
               <p>
                 Get the <strong>FREE EBOOK</strong> straight to your inbox!
               </p>
@@ -76,7 +93,7 @@ export default function Home() {
               with <strong className={styles.blue}>project briefs</strong> and <strong className={styles.purple}>wireframes</strong>!
             </p>
 
-            <img src="/images/50-react-projects-business-real-world-ecommerce-store.png" alt="" />
+            <img src="/images/50-react-projects-business-real-world-ecommerce-store.png" alt="Business and Real-world Example - Ecommerce Store" />
 
           </div>
         </section>
@@ -144,11 +161,11 @@ export default function Home() {
               Get these projects right to your inbox for <strong>FREE</strong>!
             </p>
 
-            <form className={styles.form} data-theme="light" action="https://app.convertkit.com/forms/1539376/subscriptions" method="post">
+            <form id="hero" className={styles.form} data-theme="light" action="https://app.convertkit.com/forms/1539376/subscriptions" method="post" onSubmit={handleOnFormSubmit}>
               <input type="hidden" name="tags[]" value="1749930" />
               <label className={styles.sronly} htmlFor="email">Email Address</label>
               <input id="email" type="email" name="email_address" placeholder="Email Address" />
-              <button>Get It Free</button>
+              <button id="footer" onClick={handleOnFormSubmit}>Get It Free</button>
             </form>
 
           </div>
