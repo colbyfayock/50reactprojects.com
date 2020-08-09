@@ -9,6 +9,7 @@ import {
   FaTools,
   FaRegClone
 } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 import styles from '../styles/Home.module.scss';
 
@@ -23,6 +24,13 @@ import Footer from '../components/Footer';
 
 const TITLE = '50 Projects for React & the Static Web';
 const DESCRIPTION = 'Learn by doing with this FREE ebook! Dive in with 50 projects complete with project briefs and wireframes.';
+
+const motionPreviewImages = {
+  whileHover: {
+    scale: 1.2,
+    zIndex: 2
+  }
+}
 
 export default function Home() {
 
@@ -90,14 +98,18 @@ export default function Home() {
         <Section id={styles.preview}>
           <Container>
 
-            <h2>Don&apos;t Ask &quot;What to Build&quot;</h2>
+            <h2>Not sure what to build?</h2>
 
             <p className={styles.subhead}>
               Dive in with <strong>50 projects</strong> complete
               with <strong className={styles.blue}>project briefs</strong> and <strong className={styles.purple}>wireframes</strong>!
             </p>
 
-            <img src="/images/50-react-projects-business-real-world-ecommerce-store.png" alt="Business and Real-world Example - Ecommerce Store" />
+            <div className={styles.previewimage}>
+              <motion.img width="612" height="792" src="/images/50-react-projects-business-real-world-ecommerce-store.jpg" alt="Example Ecommerce Store Project Brief" {...motionPreviewImages} />
+              <motion.img width="612" height="792" src="/images/50-react-projects-cover-business-real-world.jpg" alt="Example Business and Real-world Cover" {...motionPreviewImages} />
+              <motion.img width="612" height="792" src="/images/50-react-projects-ecommerce-store-layout.jpg" alt="Example Ecommerce Store Design Layout" {...motionPreviewImages} />
+            </div>
 
           </Container>
         </Section>
