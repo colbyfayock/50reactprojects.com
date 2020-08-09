@@ -22,8 +22,14 @@ import Section from '../components/Section';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 
+import imgOg50ReactProjects from '../images/50-react-projects-og.jpg';
+import imgPreviewBrief from '../images/50-react-projects-business-real-world-ecommerce-store.jpg';
+import imgPreviewCover from '../images/50-react-projects-cover-business-real-world.jpg';
+import imgPreviewLayout from '../images/50-react-projects-ecommerce-store-layout.jpg';
+
 const TITLE = '50 Projects for React & the Static Web';
 const DESCRIPTION = 'Learn by doing with this FREE ebook! Dive in with 50 projects complete with project briefs and wireframes.';
+const URL = 'https://50reactprojects.com';
 
 const motionPreviewImages = {
   whileHover: {
@@ -54,11 +60,11 @@ export default function Home() {
         <title>{ TITLE }</title>
         <meta name="description" content={DESCRIPTION} />
 
-        <meta property="og:url" content="https://50reactprojects.com/" />
+        <meta property="og:url" content={URL} />
         <meta property="og:type" content="book" />
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:image" content="https://50reactprojects.com/images/50-react-projects-og.jpg" />
+        <meta property="og:image" content={`${URL}${imgOg50ReactProjects}`} />
         <meta property="og:image:width" content="2024" />
         <meta property="og:image:height" content="1012" />
         <meta property="og:image:alt" content="50 Projects for React & the Static Web - Learn by doing with this FREE ebook!" />
@@ -106,9 +112,9 @@ export default function Home() {
             </p>
 
             <div className={styles.previewimage}>
-              <motion.img width="612" height="792" src="/images/50-react-projects-business-real-world-ecommerce-store.jpg" alt="Example Ecommerce Store Project Brief" {...motionPreviewImages} />
-              <motion.img width="612" height="792" src="/images/50-react-projects-cover-business-real-world.jpg" alt="Example Business and Real-world Cover" {...motionPreviewImages} />
-              <motion.img width="612" height="792" src="/images/50-react-projects-ecommerce-store-layout.jpg" alt="Example Ecommerce Store Design Layout" {...motionPreviewImages} />
+              <motion.img width="612" height="792" src={imgPreviewBrief} alt="Example Ecommerce Store Project Brief" {...motionPreviewImages} />
+              <motion.img width="612" height="792" src={imgPreviewCover} alt="Example Business and Real-world Cover" {...motionPreviewImages} />
+              <motion.img width="612" height="792" src={imgPreviewLayout} alt="Example Ecommerce Store Design Layout" {...motionPreviewImages} />
             </div>
 
           </Container>
