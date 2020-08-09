@@ -1,0 +1,30 @@
+.container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  strong,
+  span {
+    display: block;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  strong {
+    font-size: 2.4em;
+    line-height: 1;
+  }
+
+  svg {
+    flex-shrink: 0;
+    width: 4em;
+    margin-right: .5em;
+    margin-left: -.8em;
+  }
+
+}
+
+.body {
+  flex-shrink: 0;
+}

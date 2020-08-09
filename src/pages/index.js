@@ -10,11 +10,11 @@ import {
   FaRegClone
 } from 'react-icons/fa';
 
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 import * as gtag from '../lib/gtag';
 
-import LogoReact from '../components/LogoReact';
+import LogoHorizontal from '../components/LogoHorizontal';
 
 const TITLE = '50 Projects for React & the Static Web';
 const DESCRIPTION = 'Learn by doing with this FREE ebook! Dive in with 50 projects complete with project briefs and wireframes.';
@@ -61,17 +61,16 @@ export default function Home() {
           <div className={styles.hero}>
 
             <h1 className={styles.title}>
-              <strong>50 Projects</strong>
-              <span>For React &amp; The Static Web</span>
+              <LogoHorizontal />
             </h1>
 
-            <p className={styles.logo}>
-              <LogoReact />
+            <p className={styles.tagline}>
+              <strong>Learn by doing</strong> with this <strong className={styles.purplelight}>FREE</strong> ebook!
             </p>
 
             <form id="hero" className={styles.form} action="https://app.convertkit.com/forms/1539376/subscriptions" method="post" onSubmit={handleOnFormSubmit}>
               <p>
-                Get the <strong>FREE EBOOK</strong> straight to your inbox!
+                Get the <strong>FREE EBOOK</strong> straight to your inbox.
               </p>
               <input type="hidden" name="tags[]" value="1749930" />
               <label className={styles.sronly} htmlFor="email">Email Address</label>

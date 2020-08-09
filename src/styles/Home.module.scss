@@ -10,6 +10,10 @@
   color: var(--color-purple);
 }
 
+.purplelight {
+  color: var(--color-purple-light);
+}
+
 .sronly:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -138,43 +142,29 @@
 /* Hero */
 
 .hero {
+
   color: white;
   background-color: var(--color-blue-dark);
   padding-bottom: 1rem;
-}
 
-.hero h1 {
-  font-size: clamp(1.5em, 5vw, 3.5em);
-  margin: 0;
-}
-
-.hero h1 strong,
-.hero h1 span {
-  display: block;
-  text-align: center;
-  font-weight: 900;
-}
-
-.hero h1 strong {
-  font-size: 2.4em;
-  line-height: 1;
-}
-
-.hero .logo {
-  width: clamp(10rem, 18vw, 14rem);
-  margin: 3rem auto;
-}
-
-.hero .logo svg {
-  width: 100%;
-}
-
-.hero .form {}
-
-@media (max-width: 600px) {
-  .hero .form {
-    padding: 0 2rem;
+  h1 {
+    font-size: clamp(1em, 5vw, 3.5em);
+    margin: 0;
   }
+
+  .tagline {
+    text-align: center;
+    font-size: clamp(1.5em, 4vw, 3em);
+  }
+
+  .form {
+
+    @media (max-width: 600px) {
+      padding: 0 2rem;
+    }
+
+  }
+
 }
 
 /* Preview */
