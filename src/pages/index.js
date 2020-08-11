@@ -87,17 +87,17 @@ export default function Home() {
               <strong>Learn by doing</strong> with this <strong className={styles.purplelight}>FREE</strong> ebook!
             </p>
 
-            <form id="hero" className={styles.form} action="https://app.convertkit.com/forms/1539376/subscriptions" method="post" onSubmit={handleOnFormSubmit}>
+            <form id="hero" className={styles.form} action="https://app.convertkit.com/forms/1588410/subscriptions" method="post" onSubmit={handleOnFormSubmit}>
               <p>
                 Get the <strong>FREE EBOOK</strong> straight to your inbox.
               </p>
               <input type="checkbox" name="tags[]" value="1749930" checked readOnly style={{ display: 'none' }} />
-              <input type="checkbox" name="tags[]" value="1784347" checked readOnly style={{ display: 'none' }} />
+              <input type="checkbox" name="tags[]" value="1787072" checked readOnly style={{ display: 'none' }} />
               <label className={styles.sronly} htmlFor="email">Email Address</label>
               <input type="email" name="email_address" placeholder="Email Address" />
               <button>Get It Free</button>
               <p className={styles.version}>
-                v0.4
+                v1.0
               </p>
             </form>
 
@@ -187,9 +187,9 @@ export default function Home() {
               Get these projects right to your inbox for <strong>FREE</strong>!
             </p>
 
-            <form id="hero" className={styles.form} data-theme="light" action="https://app.convertkit.com/forms/1539376/subscriptions" method="post" onSubmit={handleOnFormSubmit}>
+            <form id="hero" className={styles.form} data-theme="light" action="https://app.convertkit.com/forms/1588410/subscriptions" method="post" onSubmit={handleOnFormSubmit}>
               <input type="checkbox" name="tags[]" value="1749930" checked readOnly style={{ display: 'none' }} />
-              <input type="checkbox" name="tags[]" value="1784347" checked readOnly style={{ display: 'none' }} />
+              <input type="checkbox" name="tags[]" value="1787072" checked readOnly style={{ display: 'none' }} />
               <label className={styles.sronly} htmlFor="email">Email Address</label>
               <input id="email" type="email" name="email_address" placeholder="Email Address" />
               <button id="footer" onClick={handleOnFormSubmit}>Get It Free</button>
