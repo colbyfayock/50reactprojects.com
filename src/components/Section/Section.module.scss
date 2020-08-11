@@ -1,0 +1,50 @@
+.section {
+
+  padding: 5rem 0;
+
+  &[data-spacing="compact"] {
+    padding: 2rem 0;
+  }
+
+  &[data-background-color="blue"],
+  &[data-background-color="blue-dark"] {
+
+    h1,
+    h2,
+    h3,
+    .subhead,
+    p {
+      color: inherit;
+    }
+
+  }
+
+  &[data-background-color="blue"] {
+    color: white;
+    background-color: var(--color-blue-medium);
+  }
+
+  &[data-background-color="blue-dark"] {
+    color: white;
+    background-color: var(--color-blue-dark);
+  }
+
+  h1,
+  h2,
+  h3,
+  .subhead,
+  p {
+
+    color: var(--color-blue-dark);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
