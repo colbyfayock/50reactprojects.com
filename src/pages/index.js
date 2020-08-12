@@ -30,6 +30,7 @@ import imgPreviewLayout from '../images/50-react-projects-ecommerce-store-layout
 const TITLE = '50 Projects for React & the Static Web';
 const DESCRIPTION = 'Learn by doing with this FREE ebook! Dive in with 50 projects complete with project briefs and wireframes.';
 const URL = 'https://50reactprojects.com';
+const ogImage = `${URL}${imgOg50ReactProjects}`;
 
 const motionPreviewImages = {
   whileHover: {
@@ -64,10 +65,14 @@ export default function Home() {
         <meta property="og:type" content="book" />
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:image" content={`${URL}${imgOg50ReactProjects}`} />
+        <meta property="og:image" content={ogImage} />
         <meta property="og:image:width" content="2024" />
         <meta property="og:image:height" content="1012" />
         <meta property="og:image:alt" content="50 Projects for React & the Static Web - Learn by doing with this FREE ebook!" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content={ogImage} />
+        <meta property="twitter:site" content="@colbyfayock" />
+        <meta property="twitter:creator" content="@colbyfayock" />
 
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" href="/images/favicon-512x512.png" />
