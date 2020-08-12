@@ -14,3 +14,24 @@
   }
 
 }
+
+.shareheader {
+  margin-bottom: 0;
+}
+
+.subhead {
+
+  font-size: 3.2vw;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  margin-top: .2em;
+
+  @media (max-width: 600px) {
+    font-size: 7vw;
+  }
+
+}
+
+.sharebutton {
+  font-size: 1em;
+  padding: 0 1em;
+}

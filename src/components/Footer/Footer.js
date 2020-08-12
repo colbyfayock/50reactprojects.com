@@ -1,16 +1,49 @@
 import styles from './Footer.module.scss';
 
+import { createTweetAction, openTweet } from '../../lib/social';
+
+import Section from '../Section';
 import Container from '../Container';
 
 const Footer = () => {
+  const twitterAction = createTweetAction({
+    message: [
+      `🤔 Need a new project idea?\n\n💥 Get this FREE ebook from @colbyfayock\n\n⚛️ 50 Projects for #ReactJS & the Static Web\n\n🔥 It’s packed with project briefs, layout ideas, and resources to get started\n\n#50reactprojects\n\n👉 https://50reactprojects.com`
+    ]
+  });
+
+  function handleOnTwitterClick(e) {
+    e.preventDefault();
+    openTweet({
+        message: twitterAction
+    })
+  }
+
   return (
-    <footer className={styles.footer}>
-      <Container>
-        <p>
-          &copy; { new Date().getFullYear() }, <a href="https://twitter.com/colbyfayock">Colby Fayock</a>
-        </p>
-      </Container>
-    </footer>
+    <>
+      <Section id={styles.start} backgroundColor="blue-dark">
+        <Container>
+
+          <h2 className={styles.shareheader}>Love this ebook?</h2>
+
+          <p className={styles.subhead}>
+            Share it with everyone you know!
+          </p>
+
+          <p>
+            <button className={styles.sharebutton} onClick={handleOnTwitterClick}>Share on Twitter</button>
+          </p>
+        </Container>
+      </Section>
+
+      <footer className={styles.footer}>
+        <Container>
+          <p>
+            &copy; { new Date().getFullYear() }, <a href="https://twitter.com/colbyfayock">Colby Fayock</a>
+          </p>
+        </Container>
+      </footer>
+    </>
   )
 }
 
