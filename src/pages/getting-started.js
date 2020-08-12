@@ -61,8 +61,9 @@ export default function GettingStarted() {
             </p>
 
             <p>
-              Once you find one, make sure to share on Twitter with the <strong>#50reactprojects</strong>
-              hashtag to let others know what you're working on!
+              Once you find one, make sure to share on Twitter with
+              the <strong>#50reactprojects</strong> hashtag to let
+              others know what you're working on!
             </p>
 
           </Container>
