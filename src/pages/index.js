@@ -197,7 +197,7 @@ export default function Home() {
               <input type="checkbox" name="tags[]" value="1787072" checked readOnly style={{ display: 'none' }} />
               <label className={styles.sronly} htmlFor="email">Email Address</label>
               <input id="email" type="email" name="email_address" placeholder="Email Address" />
-              <button id="footer" onClick={handleOnFormSubmit}>Get It Free</button>
+              <button id="footer">Get It Free</button>
             </form>
 
           </Container>
