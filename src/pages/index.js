@@ -99,7 +99,7 @@ export default function Home() {
               <input type="checkbox" name="tags[]" value="1749930" checked readOnly style={{ display: 'none' }} />
               <input type="checkbox" name="tags[]" value="1787072" checked readOnly style={{ display: 'none' }} />
               <label className={styles.sronly} htmlFor="email">Email Address</label>
-              <input type="email" name="email_address" placeholder="Email Address" />
+              <input type="email" name="email_address" placeholder="Email Address" required />
               <button>Get It Free</button>
               <p className={styles.version}>
                 v1.0
@@ -196,7 +196,7 @@ export default function Home() {
               <input type="checkbox" name="tags[]" value="1749930" checked readOnly style={{ display: 'none' }} />
               <input type="checkbox" name="tags[]" value="1787072" checked readOnly style={{ display: 'none' }} />
               <label className={styles.sronly} htmlFor="email">Email Address</label>
-              <input id="email" type="email" name="email_address" placeholder="Email Address" />
+              <input id="email" type="email" name="email_address" placeholder="Email Address" required />
               <button id="footer">Get It Free</button>
             </form>
 
