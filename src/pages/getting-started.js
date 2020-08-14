@@ -66,6 +66,15 @@ export default function GettingStarted() {
               others know what you're working on!
             </p>
 
+            <div className={styles.support}>
+              <h3>Support this project!</h3>
+              <p>
+                Support this free ebook and future free videos, tutorials, and resources
+                by <a href="https://github.com/sponsors/colbyfayock">sponsoring @colbyfayock on GitHub</a>!
+              </p>
+              <iframe className={styles.sponsor} src="https://github.com/sponsors/colbyfayock/button" title="Sponsor colbyfayock" height="35" width="116" style={{ border: 'none' }} />
+            </div>
+
           </Container>
         </Section>
 

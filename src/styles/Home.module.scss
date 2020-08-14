@@ -196,3 +196,26 @@
 .version {
   opacity: .8;
 }
+
+.support {
+
+  background-color: var(--color-purple);
+  padding: 1.4em 1.6em;
+  margin-top: 4em;
+
+  h3,
+  p {
+    color: white!important;
+  }
+
+  h3 {
+    font-weight: 900;
+    font-size: 2em;
+    margin-bottom: -.4em;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+}
