@@ -38,7 +38,9 @@ const Footer = () => {
 
       <footer className={styles.footer}>
         <Container>
-          <p>
+          <h3 className={styles.footerheader}>Support this project on GitHub!</h3>
+          <iframe className={styles.sponsor} src="https://github.com/sponsors/colbyfayock/button" title="Sponsor colbyfayock" height="35" width="116" style={{ border: 'none' }} />
+          <p className={styles.copyright}>
             &copy; { new Date().getFullYear() }, <a href="https://twitter.com/colbyfayock">Colby Fayock</a>
           </p>
         </Container>

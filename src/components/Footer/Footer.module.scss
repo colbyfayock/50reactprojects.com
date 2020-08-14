@@ -1,12 +1,10 @@
 .footer {
 
   background-color: var(--color-purple);
-  padding: 1rem;
+  padding: 1.4rem 1rem;
 
   p {
     color: white;
-    font-size: 1em;
-    margin: 0;
   }
 
   a {
@@ -34,4 +32,20 @@
 .sharebutton {
   font-size: 1em;
   padding: 0 1em;
+}
+
+.footerheader {
+  font-size: 2em;
+  font-weight: 900;
+  color: white;
+  margin: 0 0 .4em;
+}
+
+.sponsor {
+  margin: 0 0 .2em;
+}
+
+.copyright {
+  font-size: 1em;
+  margin: 0;
 }
