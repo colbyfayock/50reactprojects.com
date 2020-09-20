@@ -69,13 +69,14 @@ $footer-background-color: $color-blue-dark;
     flex-direction: row;
   }
 
-  div {
+  & > div {
 
+    width: 100%;
     min-width: 0;
     margin: .5em 0;
 
     @include gtMedium {
-      margin: 0 1em;
+      margin: 0 1.5em;
     }
 
   }
