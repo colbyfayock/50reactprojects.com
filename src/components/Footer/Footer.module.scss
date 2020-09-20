@@ -64,7 +64,7 @@ $footer-background-color: $color-blue-dark;
   margin-top: 1em;
   margin-bottom: 1em;
 
-  @include gtMedium {
+  @include gtLarge {
     text-align: left;
     flex-direction: row;
   }
@@ -73,9 +73,10 @@ $footer-background-color: $color-blue-dark;
 
     width: 100%;
     min-width: 0;
-    margin: .5em 0;
+    margin: 1em 0;
 
-    @include gtMedium {
+    @include gtLarge {
+      width: auto;
       margin: 0 1.5em;
     }
 
@@ -155,7 +156,7 @@ $footer-background-color: $color-blue-dark;
     order: 0;
     transform: scale(1.2) scaleX(-1);
     margin-right: 0;
-    margin-left: 1em;
+    margin-left: 2em;
   }
 
 }
