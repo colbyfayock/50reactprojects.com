@@ -1,12 +1,19 @@
+import { Helmet } from 'react-helmet';
+
 import Layout from '../components/Layout';
 import Section from '../components/Section';
 import ProjectContainer from '../components/ProjectContainer';
 
 import styles from 'styles/templates/Project.module.scss';
 
-const TemplateProject = ({ children, frontMatter }) => {
+export default function TemplateProject({ children, frontMatter }) {
+  const projectFrontMatter = {
+    ...frontMatter,
+    path: createPathFromResource(frontMatter)
+  }
+
   return (
-    <Layout frontMatter={frontMatter}>
+    <Layout frontMatter={projectFrontMatter}>
       <Section className={styles.project}>
         <ProjectContainer>
           {children}
@@ -16,4 +23,6 @@ const TemplateProject = ({ children, frontMatter }) => {
   )
 }
 
-export default TemplateProject;
+function createPathFromResource(frontMatter) {
+  return `/${frontMatter.__resourcePath}/`.replace('.mdx', '');
+}

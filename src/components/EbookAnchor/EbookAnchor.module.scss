@@ -1,0 +1,41 @@
+@import "styles/settings/__settings";
+
+.ebookAnchor {
+
+  text-align: center;
+  padding: 3rem 0;
+
+  form {
+
+    max-width: none;
+
+    p {
+      color: $color-gray-medium;
+    }
+
+  }
+
+  button,
+  input[type="email"] {
+    display: block;
+    max-width: 15em;
+    height: 3em;
+    font-size: 1.2em;
+    margin: 0 auto;
+  }
+
+  button {
+    margin-top: 1em;
+  }
+
+}
+
+.ebookAnchorHeadline {
+  font-size: 3em;
+  margin: 0;
+}
+
+.ebookAnchorTagline {
+  font-size: 2em;
+  margin: 1em 0 1.5em;
+}

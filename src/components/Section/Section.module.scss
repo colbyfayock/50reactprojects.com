@@ -23,4 +23,9 @@
     background-color: $color-blue-dark;
   }
 
+  &[data-background-color="purple"] {
+    color: white;
+    background-color: $color-purple;
+  }
+
 }

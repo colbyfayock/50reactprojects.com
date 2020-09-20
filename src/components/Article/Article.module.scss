@@ -1,0 +1,13 @@
+@import "styles/settings/__settings";
+@import "styles/util/__util";
+
+.article {
+
+  margin-bottom: 3rem;
+
+  @include gtXlarge {
+    width: calc(100% - #{$project-sidebar-width});
+    padding-right: 5rem;
+  }
+
+}

@@ -1,12 +1,15 @@
 ---
 title: 'Marketing Website'
 layout: 'project'
+topic: 'Business & Real-World'
+description: 'Create a marketing website and landing page for a technology product.'
 ---
 
 import ProjectHeader from 'components/ProjectHeader';
 import ProjectContent from 'components/ProjectContent';
 import ProjectSidebar from 'components/ProjectSidebar';
 import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
 
 <ProjectHeader>
 
@@ -31,6 +34,8 @@ Create a new website that highlights the great features of the product and provi
 * Homepage with photograph and high level overview
 * Feature pages linked from homepage with more details
 
+<LoginRequired>
+
 ## Level 2
 
 Just because you made a website, doesn’t automatically mean people will purchase the product.
@@ -43,13 +48,15 @@ Ultimately people need to purchase or sign up for the product and to do that, th
 
 Create a new page with a form that will allow people to contact the company if interested in the product. Include a “Call to Action” link at the bottom of every page on the website except for the contact page itself that links to the contact page.
 
+</LoginRequired>
+
 </ProjectContent>
 
 <ProjectSidebar>
 
 ## To Do
 
-<Checklist items={[
+<Checklist checkable={false} items={[
   {
     checked: false,
     label: 'Think of a product name',

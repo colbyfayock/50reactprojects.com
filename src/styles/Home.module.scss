@@ -38,55 +38,8 @@
 
 }
 
-.form {
 
-  @media (max-width: 600px) {
-    padding: 0 2rem;
-  }
 
-}
-
-/* Form */
-
-.form {
-  max-width: 15rem;
-  margin: 2rem auto 0;
-}
-
-@media (max-width: 600px) {
-  .form {
-    width: 100%;
-    max-width: none;
-    font-size: 1.2em;
-  }
-}
-
-.form p,
-.form input,
-.form button {
-  width: 100%;
-  text-align: center;
-}
-
-.form p {
-  color: $color-gray-light;
-  font-size: .8em;
-  font-weight: 400;
-}
-
-.form input {
-  height: 2.5em;
-  font-size: 1.1em;
-}
-
-.form[data-theme="light"] input {
-  border: solid 2px $color-gray-medium;
-}
-
-.form button {
-  color: white;
-  margin-top: .6em;
-}
 
 /* Content */
 

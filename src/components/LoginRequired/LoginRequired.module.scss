@@ -1,0 +1,12 @@
+@import "styles/settings/__settings";
+
+.loginRequired {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: $color-blue-dark;
+  padding: 1em;
+  border: solid 4px $color-purple;
+  margin: 2em 0;
+  border-radius: .25em;
+}

@@ -32,7 +32,7 @@ const ShareAnchor = ({ children, className, backgroundColor = 'blue' }) => {
   return (
     <Section className={shareAnchorClassName.toString()} backgroundColor={backgroundColor}>
       <Container className={styles.shareAnchorContainer}>
-        { children || <h3>Love this ebook?</h3> }
+        { children || <h3>Love 50 React Projects?</h3> }
         <p className={styles.shareAnchorActions}>
           <Button onClick={handleOnTwitterClick}>Share on Twitter</Button>
         </p>

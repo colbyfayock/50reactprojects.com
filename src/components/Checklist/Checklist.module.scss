@@ -22,6 +22,7 @@
     position: relative;
 
     &:before {
+
       display: inline-block;
       content: '';
       width: 1em;
@@ -31,6 +32,11 @@
       border: solid 3px $color-gray-medium;
       border-radius: .2em;
       margin-right: .5em;
+
+      [data-is-checkable="false"] & {
+        display: none;
+      }
+
     }
 
   }

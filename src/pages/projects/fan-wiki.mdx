@@ -1,0 +1,90 @@
+---
+title: 'Fan Wiki'
+layout: 'project'
+topic: 'Fun & Interesting'
+description: 'Create a fan wiki that includes all characters of Futurama or your favorite TV show or movie.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Fan Wiki
+
+Create a <strong className="color-blue">fan wiki</strong> that includes all characters of <strong className="color-purple">Futurama</strong> or your favorite <strong className="color-purple">TV show</strong> or <strong className="color-purple">movie</strong>.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+There’s a huge community of fans of your favorite TV series who want an easy way to access individual character information, but that website doesn’t exist! APIs are available, but the only way to view that information is by making requests programmatically.
+
+## Level 1
+
+A good way of making that character data easy to reference is by hosting it on a website. Luckily, we can use an API to dynamically create a wiki of all of the characters of the show.
+
+Create a character wiki using an API that lists out all of the characters of your favorite TV series.
+
+<LoginRequired>
+
+## Level 2
+
+Viewing a list of characters is helpful, but people want to know more details about each character. What makes them unique to the series?
+
+Add dynamic pages to the character wiki allowing people to navigate to characters to view more information.
+
+## Level 3
+
+Looking up a character from your favorite TV series doesn’t need to be boring, there are qualities about that show that make it unique.
+
+Use some of the characteristics of the TV show to make the character wiki look like it belongs in that TV universe with custom styles and animations.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+    checked: false,
+    label: 'Create a new app',
+  },
+  {
+    checked: false,
+    label: 'Fetch all characters',
+  },
+  {
+    checked: false,
+    label: 'List out all characters',
+  },
+  {
+    checked: false,
+    label: 'Create dynamic pages',
+  },
+  {
+    checked: false,
+    label: 'Add character details',
+  },
+  {
+    checked: false,
+    label: 'Add custom styles',
+  },
+  {
+    checked: false,
+    label: 'Add custom animations',
+  }
+]} />
+
+## Toolbox
+- Futurama API
+
+</ProjectSidebar>

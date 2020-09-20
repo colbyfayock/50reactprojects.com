@@ -22,6 +22,11 @@ button {
   font-size: 1em;
 }
 
+input {
+  border: solid 2px $color-gray-medium;
+  border-radius: .2em;
+}
+
 p,
 ul {
   font-size: 1.3em;
