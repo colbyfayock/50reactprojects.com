@@ -31,6 +31,7 @@
 
   font-size: 3.2vw;
   font-size: clamp(2rem, 3.2vw, 3rem);
+  text-align: center;
 
   @media (max-width: 600px) {
     font-size: 7vw;
@@ -38,8 +39,16 @@
 
 }
 
+.sectionTitle {
+  font-size: 3.5em;
+  text-align: center;
+  margin-top: 0;
+}
 
-
+.sectionCopy {
+  font-size: 1.4em;
+  text-align: center;
+}
 
 /* Content */
 

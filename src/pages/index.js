@@ -73,7 +73,7 @@ export default function Home() {
       <Section id={styles.preview}>
         <Container>
 
-          <h2>Not sure what to build?</h2>
+          <h2 className={styles.sectionTitle}>Not sure what to build?</h2>
 
           <p className={styles.subhead}>
             Dive in with <strong>50 projects</strong> complete
@@ -92,9 +92,9 @@ export default function Home() {
       <Section backgroundColor="blue">
         <Container>
 
-          <h2>Learn by Doing</h2>
+          <h2 className={styles.sectionTitle}>Learn by Doing</h2>
 
-          <p>
+          <p className={styles.sectionCopy}>
             One of the best ways to learn is by <strong>doing the work</strong>. Choose
             from <strong>8 project categories</strong> and get started right away.
           </p>
