@@ -1,0 +1,10 @@
+@import "styles/settings/__settings";
+@import "styles/util/__util";
+
+.aside {
+
+  @include gtXlarge {
+    width: $project-sidebar-width;
+  }
+
+}

@@ -1,0 +1,46 @@
+@import "styles/settings/__settings";
+
+.form {
+
+  max-width: 15rem;
+  margin: 2rem auto 0;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    max-width: none;
+    font-size: 1.2em;
+    padding: 0 2rem;
+  }
+
+  &[data-theme="light"] {
+
+    input {
+      border: solid 2px $color-gray-medium;
+    }
+
+  }
+
+  p,
+  input,
+  button {
+    width: 100%;
+    text-align: center;
+  }
+
+  p {
+    color: $color-gray-light;
+    font-size: .8em;
+    font-weight: 400;
+  }
+
+  input {
+    height: 2.5em;
+    font-size: 1.1em;
+  }
+
+  button {
+    color: white;
+    margin-top: .6em;
+  }
+
+}

@@ -1,0 +1,18 @@
+.projects {
+
+  h1 {
+    width: 100%;
+    font-size: 3em;
+  }
+
+}
+
+.projectsList {
+
+  &,
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+}

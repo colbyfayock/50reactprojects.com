@@ -1,13 +1,15 @@
+@import "styles/settings/__settings";
+
 .blue {
-  color: var(--color-blue-medium);
+  color: $color-blue-medium;
 }
 
 .purple {
-  color: var(--color-purple);
+  color: $color-purple;
 }
 
 .purplelight {
-  color: var(--color-purple-light);
+  color: $color-purple-light;
 }
 
 .sronly:not(:focus):not(:active) {
@@ -29,6 +31,7 @@
 
   font-size: 3.2vw;
   font-size: clamp(2rem, 3.2vw, 3rem);
+  text-align: center;
 
   @media (max-width: 600px) {
     font-size: 7vw;
@@ -36,54 +39,15 @@
 
 }
 
-.form {
-
-  @media (max-width: 600px) {
-    padding: 0 2rem;
-  }
-
-}
-
-/* Form */
-
-.form {
-  max-width: 15rem;
-  margin: 2rem auto 0;
-}
-
-@media (max-width: 600px) {
-  .form {
-    width: 100%;
-    max-width: none;
-    font-size: 1.2em;
-  }
-}
-
-.form p,
-.form input,
-.form button {
-  width: 100%;
+.sectionTitle {
+  font-size: 3.5em;
   text-align: center;
+  margin-top: 0;
 }
 
-.form p {
-  color: var(--color-gray-light);
-  font-size: .8em;
-  font-weight: 400;
-}
-
-.form input {
-  height: 2.5em;
-  font-size: 1.1em;
-}
-
-.form[data-theme="light"] input {
-  border: solid 2px var(--color-gray-medium);
-}
-
-.form button {
-  color: white;
-  margin-top: .6em;
+.sectionCopy {
+  font-size: 1.4em;
+  text-align: center;
 }
 
 /* Content */
@@ -131,7 +95,7 @@
     width: 2em;
     height: 2em;
     font-size: .7em;
-    background-color: var(--color-blue-dark);
+    background-color: $color-blue-dark;
     border-radius: 100%;
     margin-right: .6em;
   }
@@ -199,7 +163,7 @@
 
 .support {
 
-  background-color: var(--color-purple);
+  background-color: $color-purple;
   padding: 1.4em 1.6em;
   margin-top: 4em;
 

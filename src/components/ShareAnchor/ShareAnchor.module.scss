@@ -1,0 +1,45 @@
+@import "styles/settings/__settings";
+@import "styles/util/__util";
+
+.shareAnchor {
+  padding: 2rem 0;
+}
+
+.shareAnchorContainer {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include gtMedium() {
+    flex-direction: row;
+  }
+
+  h3 {
+
+    font-size: 2.4em;
+    text-align: center;
+    margin: 0;
+
+    @include gtMedium() {
+      text-align: left;
+    }
+
+  }
+
+  button {
+    background-color: $color-blue-dark;
+  }
+
+}
+
+.shareAnchorActions {
+
+  margin: 1em 0 0;
+
+  @include gtMedium() {
+    margin: 0 0 0 2em;
+  }
+
+}

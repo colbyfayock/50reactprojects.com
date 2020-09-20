@@ -1,3 +1,5 @@
+@import "styles/settings/__settings";
+
 .main {
-  border-top: solid 20px var(--color-purple);
+  border-top: solid 20px $color-purple;
 }

@@ -1,0 +1,19 @@
+@import "styles/settings/__settings";
+@import "styles/util/__util";
+
+.projectSidebar {
+
+  @include gtXlarge {
+    width: $project-sidebar-width;
+  }
+
+  h2 {
+    background-color: $color-blue-medium;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+}

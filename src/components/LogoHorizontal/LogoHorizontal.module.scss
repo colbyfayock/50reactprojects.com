@@ -1,8 +1,10 @@
+@import "styles/settings/__settings";
+
 /*************
  * Container *
  *************/
 
- .container {
+.container {
 
   display: flex;
   justify-content: center;
@@ -38,7 +40,7 @@
 .hero {
 
   color: white;
-  background-color: var(--color-blue-dark);
+  background-color: $color-blue-dark;
   padding-bottom: 1rem;
 
   h1 {

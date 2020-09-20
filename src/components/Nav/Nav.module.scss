@@ -1,0 +1,36 @@
+@import "styles/settings/__settings";
+
+.nav {
+
+  color: white;
+  background-color: $color-blue-dark;
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+}
+
+.navSection {
+  padding: 1rem 0;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  max-width: none;
+  width: 100%;
+}
+
+.navLogo {
+
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

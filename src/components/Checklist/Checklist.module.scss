@@ -1,0 +1,73 @@
+@import "styles/settings/__settings";
+
+.checklist {
+
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: .4em;
+  }
+
+}
+
+.checklistItemLabel {
+
+  display: block;
+
+  span {
+
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:before {
+
+      display: inline-block;
+      content: '';
+      width: 1em;
+      height: 1em;
+      font-size: .9em;
+      background-color: white;
+      border: solid 3px $color-gray-medium;
+      border-radius: .2em;
+      margin-right: .5em;
+
+      [data-is-checkable="false"] & {
+        display: none;
+      }
+
+    }
+
+  }
+
+  :checked {
+
+    & + span {
+
+      &:before {
+        border: solid 3px $color-blue-medium;
+      }
+
+      &:after {
+        display: block;
+        position: absolute;
+        top: .95em;
+        left: .6em;
+        content: '';
+        width: .25em;
+        height: .25em;
+        font-size: .8em;
+        background-color: $color-blue-medium;
+        box-shadow: 0 -0.2em #0A64EC,
+                    0 -0.4em #0A64EC,
+                    -0.2em 0 #0A64EC;
+        transform: rotate(45deg);
+        border-radius: .2em;
+      }
+
+    }
+
+  }
+
+}
