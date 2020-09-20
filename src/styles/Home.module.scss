@@ -1,13 +1,15 @@
+@import "styles/settings/__settings";
+
 .blue {
-  color: var(--color-blue-medium);
+  color: $color-blue-medium;
 }
 
 .purple {
-  color: var(--color-purple);
+  color: $color-purple;
 }
 
 .purplelight {
-  color: var(--color-purple-light);
+  color: $color-purple-light;
 }
 
 .sronly:not(:focus):not(:active) {
@@ -67,7 +69,7 @@
 }
 
 .form p {
-  color: var(--color-gray-light);
+  color: $color-gray-light;
   font-size: .8em;
   font-weight: 400;
 }
@@ -78,7 +80,7 @@
 }
 
 .form[data-theme="light"] input {
-  border: solid 2px var(--color-gray-medium);
+  border: solid 2px $color-gray-medium;
 }
 
 .form button {
@@ -131,7 +133,7 @@
     width: 2em;
     height: 2em;
     font-size: .7em;
-    background-color: var(--color-blue-dark);
+    background-color: $color-blue-dark;
     border-radius: 100%;
     margin-right: .6em;
   }
@@ -199,7 +201,7 @@
 
 .support {
 
-  background-color: var(--color-purple);
+  background-color: $color-purple;
   padding: 1.4em 1.6em;
   margin-top: 4em;
 

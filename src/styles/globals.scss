@@ -1,34 +1,6 @@
+@import "settings/__settings";
+
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
-
-:root {
-  --color-blue-medium: #0A64EC;
-  --color-blue-dark: #100E4F;
-  --color-purple: #9162BB;
-  --color-purple-light: #AD6EE7;
-  --color-gray-light: #E0DFFF;
-  --color-gray-medium: #909090;
-  --border-radius-small: 3px;
-}
-
-/***********
- * Colors *
- ***********/
-
-.blue {
-  color: var(--color-blue-medium);
-}
-
-.purple {
-  color: var(--color-purple);
-}
-
-.purplelight {
-  color: var(--color-purple-light);
-}
-
-/***************
- * Application *
- ***************/
 
 * {
   box-sizing: border-box;
@@ -36,77 +8,47 @@
 
 html,
 body {
+  font-size: 16px;
   padding: 0;
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
-}
-
-.main {
-  border-top: solid 20px var(--color-purple);
 }
 
 /***************************
  * Components / Typography *
  ***************************/
 
-h1,
-h2 {
-  font-size: 5vw;
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  font-weight: 900;
-}
-
-h3 {
-
-  font-size: 3.2vw;
-  font-size: clamp(2rem, 3.2vw, 3rem);
-  font-weight: 400;
-
-  @media (max-width: 600px) {
-    font-size: 7vw;
-  }
-
-}
-
-h2,
-.subhead {
-  color: var(--color-blue-dark);
-}
-
 p,
 ul {
-  font-size: 1.5em;
-  line-height: 1.4;
+  font-size: 1.3em;
+  line-height: 1.5;
 }
 
+ul {
+  padding-left: 1.2em;
+}
+
+li {
+  margin-bottom: .2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
 a {
   color: inherit;
-  text-decoration: none;
-}
-
-input {
-  border-radius: var(--border-radius-small);
-  border: 0;
-}
-
-button {
-  color: white;
-  height: 2.1155em;
-  font-family: inherit;
-  font-size: 1.3em;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 2em;
-  background-color: var(--color-blue-medium);
-  border-radius: var(--border-radius-small);
-  border: 0;
 }
 
 /***********
  * Helpers *
  ***********/
 
-.sronly:not(:focus):not(:active) {
+.sronly {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
@@ -114,4 +56,12 @@ button {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.color-blue {
+  color: $color-blue-medium;
+}
+
+.color-purple {
+  color: $color-purple;
 }

@@ -1,0 +1,18 @@
+@import "styles/settings/__settings";
+
+.project {
+
+  h2 {
+
+    color: white;
+    background-color: $color-gray-medium;
+    padding: .3em .5em;
+    margin: 2em -.6rem 1em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+  }
+
+}

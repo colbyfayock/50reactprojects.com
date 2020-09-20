@@ -1,8 +1,14 @@
+import ClassName from 'models/classname';
+
 import styles from './Section.module.scss';
 
-const Section = ({ children, backgroundColor, spacing, ...rest }) => {
+const Section = ({ children, className, backgroundColor, spacing, ...rest }) => {
+  const sectionClassName = new ClassName(styles.section);
+
+  sectionClassName.addIf(className, className);
+
   return (
-    <div className={styles.section} data-background-color={backgroundColor} data-spacing={spacing} {...rest}>
+    <div className={sectionClassName.toString()} data-background-color={backgroundColor} data-spacing={spacing} {...rest}>
       { children }
     </div>
   )
