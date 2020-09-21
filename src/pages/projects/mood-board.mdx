@@ -1,0 +1,87 @@
+---
+title: 'Mood Board'
+layout: 'project'
+topic: 'Productivity'
+description: 'Create a mood board to upload images and add notes for project inspiration.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Mood Board
+
+Create a <strong className="color-blue">mood board</strong> to upload images and add notes for <strong className="color-purple">project inspiration</strong>.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+Gathering inspiration for a project can get messy if you’re just using a folder on your computer. Also, which folder are you using? The one on the Desktop or the one in Documents? Mood boards are a great way to keep those pieces of inspiration and thoughts organized in one place.
+
+## Level 1
+
+Mood boards are generally made up of the ability to add a bunch of images in one place. Kind of like creating your own Pinterest board, but more focused.
+
+Create a webpage that has a gallery of images.
+
+<LoginRequired>
+
+## Level 2
+
+Sometimes images don’t communicate the entire story. Often you’ll see mood boards have the ability to add notes or a comment, whether attached to an image or as part of the mood board itself.
+
+Add the ability to attach a note to an image or add a note to the mood board.
+
+## Level 3
+
+Every time we want to add an image or a note, we don’t want to have to manually update code, it’s helpful to have an management UI and even a way to reorder.
+
+Add a content management system to manage the images and notes. Bonus: add the ability to rearrange each item.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+    label: 'Create webpage',
+  },
+  {
+    label: 'Add gallery of images',
+  },
+  {
+    label: 'Add image notes',
+  },
+  {
+    label: 'Add page notes',
+  },
+  {
+    label: 'Set up CMS',
+  },
+  {
+    label: 'Migrate content to CMS',
+  },
+  {
+    label: 'Integrate CMS',
+  }
+]} />
+
+## Toolbox
+- Cloudinary
+- use-cloudinary
+
+## Resources
+- [bit.ly/30Ub07C](https://bit.ly/30Ub07C)
+
+</ProjectSidebar>

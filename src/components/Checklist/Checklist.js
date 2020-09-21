@@ -7,15 +7,16 @@ const Checklist = ({ items = [], checkable = true, onChange }) => {
 
   return (
     <ul className={styles.checklist} data-is-checkable={checkable}>
-      {items.map((item, i) => {
-        const value = item?.value || item?.label;
+      {items.map((item = {}, i) => {
+        const { label, checked = false } = item;
+        const value = item?.value || label;
         return (
           <li key={i}>
             <label className={styles.checklistItemLabel}>
               {checkable && (
-                <input className="sronly" type="checkbox" defaultChecked={item?.checked} value={value} onChange={onChange} />
+                <input className="sronly" type="checkbox" defaultChecked={checked} value={value} onChange={onChange} />
               )}
-              <span>{ item?.label }</span>
+              <span>{ label }</span>
             </label>
           </li>
         );
