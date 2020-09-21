@@ -1,8 +1,8 @@
 ---
-title: 'asdf'
+title: 'Component Library'
 layout: 'project'
-topic: 'asdf'
-description: 'asdf'
+topic: 'Tools & Libraries'
+description: 'Create a component library for an online music, video games, and movies store.'
 ---
 
 import ProjectHeader from 'components/ProjectHeader';
@@ -13,12 +13,9 @@ import LoginRequired from 'components/LoginRequired';
 
 <ProjectHeader>
 
-# asdf
+# Component Library
 
-
-
-<strong className="color-blue">
-<strong className="color-purple">
+Create a <strong className="color-blue">component library</strong> for an online <strong className="color-purple">music</strong>, <strong className="color-purple">video games</strong>, and <strong className="color-purple">movies</strong> store.
 
 </ProjectHeader>
 
@@ -26,21 +23,29 @@ import LoginRequired from 'components/LoginRequired';
 
 ## Brief
 
-
+You work for a large scale ecommerce website that sells music, video games, and movies. Your team wants consistent and reusable components across the website, so your assignment is to create a component library to support the project.
 
 ## Level 1
 
+The most visually appealing way to display a collection of media is to use the poster or album artwork in an easy-to-use way like a grid.
 
+Create a new component library with Storybook.js that includes the following base components:
+
+- Poster: a single media item represented by its artwork
+- Poster Grid: a grid of Posters
+- Media Details: a media item’s metadata including Poster
 
 <LoginRequired>
 
 ## Level 2
 
+Maintaining a component library includes making sure the components always work. To do this, we can use snapshot testing to automatically test our components.
 
+Use the Storybook add-on StoryShots to add snapshot testing.
 
 ## Level 3
 
-
+The purpose of building a component library is to use it in a project. Using your newly created component library, create a new React app using your favorite framework that shows the your store’s available music, video games, and music (or your favorites of each).
 
 </LoginRequired>
 
@@ -52,41 +57,33 @@ import LoginRequired from 'components/LoginRequired';
 
 <Checklist checkable={false} items={[
   {
-    label: 'asdf',
+    label: 'Create a new project',
   },
   {
-    label: 'asdf',
+    label: 'Install Storybook.js',
   },
   {
-    label: 'asdf',
+    label: 'Create Poster',
   },
   {
-    label: 'asdf',
+    label: 'Create Poster Grid',
   },
   {
-    label: 'asdf',
+    label: 'Create Media Details',
   },
   {
-    label: 'asdf',
+    label: 'Add StoryShots',
   },
   {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
+    label: 'Create app',
   }
 ]} />
 
 ## Toolbox
--
+- Storybook.js
+- StoryShots
 
 ## Resources
--
+- [bit.ly/2D68yCA](https://bit.ly/2D68yCA)
 
 </ProjectSidebar>

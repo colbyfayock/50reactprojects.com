@@ -1,8 +1,8 @@
 ---
-title: 'asdf'
+title: 'Tetris'
 layout: 'project'
-topic: 'asdf'
-description: 'asdf'
+topic: 'Games & Puzzles'
+description: 'Create a tetris-like game that requires someone to rotate shapes to fit like a puzzle.'
 ---
 
 import ProjectHeader from 'components/ProjectHeader';
@@ -13,12 +13,9 @@ import LoginRequired from 'components/LoginRequired';
 
 <ProjectHeader>
 
-# asdf
+# Tetris
 
-
-
-<strong className="color-blue">
-<strong className="color-purple">
+Create a <strong className="color-blue">tetris-like</strong> game that requires someone to <strong className="color-purple">rotate shapes</strong> to fit like a puzzle.
 
 </ProjectHeader>
 
@@ -26,21 +23,27 @@ import LoginRequired from 'components/LoginRequired';
 
 ## Brief
 
-
+Tretis is a puzzle game that never seems to go out of style. Regardless of the theme, at its core, tetris is made up of shapes of blocks that you need to use to complete rows to avoid overflowing the available space.
 
 ## Level 1
 
+The main player control of Tetris is that you’re able to move a single object left and right as it falls to the ground. This helps line up the blocks as they stack up.
 
+Add a single object made up of blocks that naturally falls down with the ability to move it left and right. Once that object falls, another object should fall after.
 
 <LoginRequired>
 
 ## Level 2
 
+An additional control you have as a player is the ability to rotate each shape 90 degrees at a time.
 
+Add the ability to rotate the shape as it falls 90 degrees.
 
 ## Level 3
 
+The goal as you position the shapes is to try to complete a row. Doing so removes that row from the play area, which helps prevent the blocks from overflowing.
 
+Remove a row from the play area once it’s completed.
 
 </LoginRequired>
 
@@ -52,41 +55,38 @@ import LoginRequired from 'components/LoginRequired';
 
 <Checklist checkable={false} items={[
   {
-    label: 'asdf',
+    label: 'Create a play area',
   },
   {
-    label: 'asdf',
+    label: 'Add blocks',
   },
   {
-    label: 'asdf',
+    label: 'Add shapes of blocks',
   },
   {
-    label: 'asdf',
+    label: 'Add falling shape',
   },
   {
-    label: 'asdf',
+    label: 'Add shape stacking',
   },
   {
-    label: 'asdf',
+    label: 'Add shape movement',
   },
   {
-    label: 'asdf',
+    label: 'Add shape rotation',
   },
   {
-    label: 'asdf',
+    label: 'Add shape completion',
   },
   {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
+    label: 'Add Game Over when full',
   }
 ]} />
 
 ## Toolbox
--
+- React Hooks
 
 ## Resources
--
+- [bit.ly/30tOGm9](https://bit.ly/30tOGm9)
 
 </ProjectSidebar>

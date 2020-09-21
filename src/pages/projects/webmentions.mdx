@@ -1,8 +1,8 @@
 ---
-title: 'asdf'
+title: 'Webmentions'
 layout: 'project'
-topic: 'asdf'
-description: 'asdf'
+topic: 'Project Add-Ons'
+description: 'Add webmentions integration to a website that shows Twitter interactions with the website'
 ---
 
 import ProjectHeader from 'components/ProjectHeader';
@@ -13,12 +13,9 @@ import LoginRequired from 'components/LoginRequired';
 
 <ProjectHeader>
 
-# asdf
+# Webmentions
 
-
-
-<strong className="color-blue">
-<strong className="color-purple">
+Add <strong className="color-blue">webmentions</strong> integration to a website that shows <strong className="color-purple">Twitter interactions</strong> with the website
 
 </ProjectHeader>
 
@@ -26,21 +23,27 @@ import LoginRequired from 'components/LoginRequired';
 
 ## Brief
 
-
+Social interaction is an impactful way to bring more of an audience and conversation to topics we write about. Having something on a website to show that interaction can be helpful to both inspire people to want to get involved or let people feel like they can be part of it.
 
 ## Level 1
 
+In order to make use of Webmentions, a website needs to be configured with meta tags to provide information.
 
+Add the proper meta tags to a website and validate its use with webmention.io.
 
 <LoginRequired>
 
 ## Level 2
 
+The Webmentions API is a way to programmatically see connections in social interactions from a URL of your website. It lets you get the type of interaction and even the person’s profile avatar.
 
+Connect a website to Webmentions and add a list of social interactions to blog post pages.
 
 ## Level 3
 
+Now that the website is showing all of the interactions, there should be an easy way to join the conversation.
 
+Add a social link that when clicked creates a tweet with a link to the page.
 
 </LoginRequired>
 
@@ -52,41 +55,31 @@ import LoginRequired from 'components/LoginRequired';
 
 <Checklist checkable={false} items={[
   {
-    label: 'asdf',
+    label: 'Add meta tags to website',
   },
   {
-    label: 'asdf',
+    label: 'Validate meta tags',
   },
   {
-    label: 'asdf',
+    label: 'Connect to Webmention',
   },
   {
-    label: 'asdf',
+    label: 'Connect social to Bridgy',
   },
   {
-    label: 'asdf',
+    label: 'List interactions',
   },
   {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
+    label: 'Add tweet button',
   }
 ]} />
 
 ## Toolbox
--
+- webmention.io
+- Bridgy
+- Gatsby Plugin Webmention
 
 ## Resources
--
+- [bit.ly/33eBCTw](https://bit.ly/33eBCTw)
 
 </ProjectSidebar>

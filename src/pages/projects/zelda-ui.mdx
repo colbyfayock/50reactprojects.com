@@ -1,8 +1,8 @@
 ---
-title: 'asdf'
+title: 'Zelda UI'
 layout: 'project'
-topic: 'asdf'
-description: 'asdf'
+topic: 'Clones'
+description: 'Create a Zelda Breath of the Wild game UI clone that lets someone select items.'
 ---
 
 import ProjectHeader from 'components/ProjectHeader';
@@ -13,12 +13,9 @@ import LoginRequired from 'components/LoginRequired';
 
 <ProjectHeader>
 
-# asdf
+# Zelda UI
 
-
-
-<strong className="color-blue">
-<strong className="color-purple">
+Create a <strong className="color-blue">Zelda Breath of the Wild game UI</strong> clone that lets someone <strong className="color-purple">select items</strong>.
 
 </ProjectHeader>
 
@@ -26,21 +23,27 @@ import LoginRequired from 'components/LoginRequired';
 
 ## Brief
 
-
+Zelda Breath of the Wild was a breakthrough game for the Nintendo Switch platform that capivated a huge community. Part of Zelda, and really any game, was the UI that allows players to interact with the game such as where players could select different weapons or items to use.
 
 ## Level 1
 
+The goal of the the selection UI is to allow the player to choose what weapon or item they have active for gameplay. This includes swords, shields, or food to regain strength.
 
+Create a grid of selectable items that allow someone to select an item to make it active.
 
 <LoginRequired>
 
 ## Level 2
 
+Part of the selection UI allows the player to see more details about that particular item and if it makes sense, show that item on top of a the playable character.
 
+Add a character to the side of the selection UI. When an item is selected, show that item on the character if it makes sene. Additionally show a panel of information about that item.
 
 ## Level 3
 
+When playing a game, you don’t have a mouse to click, you use a joystick or a D-Pad.
 
+Add hotkeys that allow someone to navigate the selection UI with only their keyboard.
 
 </LoginRequired>
 
@@ -52,41 +55,29 @@ import LoginRequired from 'components/LoginRequired';
 
 <Checklist checkable={false} items={[
   {
-    label: 'asdf',
+    label: 'Create grid of items',
   },
   {
-    label: 'asdf',
+    label: 'Add active state',
   },
   {
-    label: 'asdf',
+    label: 'Add character',
   },
   {
-    label: 'asdf',
+    label: 'Show items on character',
   },
   {
-    label: 'asdf',
+    label: 'Show item info panel',
   },
   {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
+    label: 'Add navigation hotkeys',
   }
 ]} />
 
 ## Toolbox
--
+- React HotKeys
 
 ## Resources
--
+- [bit.ly/30J9CG1](https://bit.ly/30J9CG1)
 
 </ProjectSidebar>

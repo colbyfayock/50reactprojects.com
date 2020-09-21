@@ -1,8 +1,8 @@
 ---
-title: 'asdf'
+title: 'Winamp'
 layout: 'project'
-topic: 'asdf'
-description: 'asdf'
+topic: 'Clones'
+description: 'Create a Winamp clone that uses the Spotify API to play music.'
 ---
 
 import ProjectHeader from 'components/ProjectHeader';
@@ -13,12 +13,9 @@ import LoginRequired from 'components/LoginRequired';
 
 <ProjectHeader>
 
-# asdf
+# Winamp
 
-
-
-<strong className="color-blue">
-<strong className="color-purple">
+Create a <strong className="color-blue">Winamp</strong> clone that uses the <strong className="color-purple">Spotify API</strong> to <strong className="color-purple">play music</strong>.
 
 </ProjectHeader>
 
@@ -26,21 +23,27 @@ import LoginRequired from 'components/LoginRequired';
 
 ## Brief
 
-
+Winamp was a well-liked media player that allowed you to play your music in an easy to use way. It also included some features that weren’t common at the time like playlist management and visualizations.
 
 ## Level 1
 
+The core feature of Winamp is that it played music. Today’s music is more commonly streamed from services, so we can use Spotify as our music service.
 
+Create a music player using the Spotify API that plays a single song from your library.
 
 <LoginRequired>
 
 ## Level 2
 
+Playlists were also an important part of Winamp and they’re still an incredibly useful feature today. It helps us easily manage the music we want to listen to for the right mood.
 
+Add the ability to select a playlist from Spotify and play the music. The playlist content should show in the UI and should be able to be selected to play.
 
 ## Level 3
 
+Another bit of nostolgia was that Winamp provided some interesting visualizations for music. These visualizations were generated from the music itself, leading to some pretty mesmerizing effects.
 
+Create some generative visualizations utilizing the audio of the song being played.
 
 </LoginRequired>
 
@@ -52,41 +55,29 @@ import LoginRequired from 'components/LoginRequired';
 
 <Checklist checkable={false} items={[
   {
-    label: 'asdf',
+    label: 'Create music player UI',
   },
   {
-    label: 'asdf',
+    label: 'Add Spotify login',
   },
   {
-    label: 'asdf',
+    label: 'Add Spotify playback',
   },
   {
-    label: 'asdf',
+    label: 'Add playlist viewing',
   },
   {
-    label: 'asdf',
+    label: 'Add play from playlist',
   },
   {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
-  },
-  {
-    label: 'asdf',
+    label: 'Add audio visualizations',
   }
 ]} />
 
 ## Toolbox
--
+- Spotify API
 
 ## Resources
--
+- [bit.ly/3fggazU](https://bit.ly/3fggazU)
 
 </ProjectSidebar>
