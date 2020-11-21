@@ -18,13 +18,22 @@ import Layout from '../components/Layout';
 import Container from '../components/Container';
 import Section from '../components/Section';
 import Article from '../components/Article';
-import Aside from '../components/Aside';
-import Checklist from '../components/Checklist';
 
 import styles from 'styles/pages/Projects.module.scss';
 
 const TITLE = 'Projects';
 const DESCRIPTION = 'Use these 50 real-world project ideas to learn by doing including building an ecommerce store and a budget manager.';
+
+const TOPIC_ORDER = [
+  'Business & Real-World',
+  'Fun & Interesting',
+  'Personal & Portfolio',
+  'Productivity',
+  'Games & Puzzles',
+  'Tools & Libraries',
+  'Project Add-Ons',
+  'Clones'
+];
 
 const defaultFilterState = {
   topics: {}
@@ -71,16 +80,6 @@ export default function Projects({ projects }) {
         <Container display="flex">
           <h1>Projects to Start Building</h1>
 
-          <div className={styles.projectsTopics}>
-            <h2 className="sronly">Topics</h2>
-
-            <Checklist items={projects.map(({ title: label }) => {
-                return {
-                  label
-                }
-            })} onChange={handleOnChecklistChange} />
-          </div>
-
           <Article withSidebar={false}>
             <h2 className="sronly">Project Ideas</h2>
             <ul className={styles.projectsList}>
@@ -124,7 +123,7 @@ export async function getStaticProps() {
   const projects = await getProjects();
   return {
     props: {
-      projects: groupProjectsByTopic(projects)
+      projects: groupProjectsByTopic(projects, TOPIC_ORDER)
     },
   }
 }

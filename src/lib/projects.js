@@ -54,7 +54,7 @@ export async function getProjects() {
  * groupProjectsByTopic
  */
 
-export function groupProjectsByTopic(projects) {
+export function groupProjectsByTopic(projects, sortOrder) {
   const topics = {};
 
   projects.forEach(project => {
@@ -67,5 +67,9 @@ export function groupProjectsByTopic(projects) {
     topics[project.topic].projects.push(project);
   });
 
-  return Object.keys(topics).map(key => topics[key]);
+  if ( !Array.isArray(sortOrder) ) {
+    return Object.keys(topics).map(key => topics[key]);
+  }
+
+  return sortOrder.map(key => topics[key]);
 }
