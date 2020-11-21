@@ -69,8 +69,19 @@ export default function Projects({ projects }) {
 
       <Section className={styles.projects}>
         <Container display="flex">
-          <h1>Projects</h1>
-          <Article>
+          <h1>Projects to Start Building</h1>
+
+          <div className={styles.projectsTopics}>
+            <h2 className="sronly">Topics</h2>
+
+            <Checklist items={projects.map(({ title: label }) => {
+                return {
+                  label
+                }
+            })} onChange={handleOnChecklistChange} />
+          </div>
+
+          <Article withSidebar={false}>
             <h2 className="sronly">Project Ideas</h2>
             <ul className={styles.projectsList}>
               {filteredProjects.map(topic => {
@@ -80,11 +91,18 @@ export default function Projects({ projects }) {
                     <h3>{ title }</h3>
                     <ul>
                       {projects.map(project => {
-                        const { id, path } = project;
+                        const { id, path, title, description } = project;
                         return (
                           <li key={id}>
                             <Link href={path}>
-                              <a>{ project.title }</a>
+                              <a className={styles.project}>
+                                <p className={styles.projectTitle}>
+                                  <strong>{ title }</strong>
+                                </p>
+                                <p className={styles.projectDescription}>
+                                  { description }
+                                </p>
+                              </a>
                             </Link>
                           </li>
                         );
@@ -95,14 +113,6 @@ export default function Projects({ projects }) {
               })}
             </ul>
           </Article>
-          <Aside>
-            <h2>Topics</h2>
-            <Checklist items={projects.map(({ title: label }) => {
-                return {
-                  label
-                }
-            })} onChange={handleOnChecklistChange} />
-          </Aside>
         </Container>
       </Section>
     </Layout>

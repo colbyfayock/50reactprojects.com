@@ -1,3 +1,60 @@
+@import "styles/settings/__settings";
+
+.projectsTopics {
+
+  width: 100%;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+  }
+
+  li {
+    padding: .25em;
+  }
+
+  label {
+
+    :checked {
+
+      opacity: 0;
+
+      & + span {
+
+        color: white;
+        border: solid 2px $color-blue-medium;
+        background-color: $color-blue-medium;
+
+        &:after {
+          display: none;
+        }
+
+      }
+
+    }
+
+    span {
+
+      display: flex;
+      align-items: center;
+      font-size: .9em;
+      padding: .3em .8em;
+      background-color: white;
+      border: solid 2px $color-gray-medium;
+      border-radius: .2em;
+
+      &:before {
+        display: none;
+      }
+
+    }
+
+  }
+
+}
+
 .projects {
 
   h1 {
@@ -15,4 +72,37 @@
     padding-left: 0;
   }
 
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -.5em;
+  }
+
+  li {
+    flex-basis: 50%;
+    padding: .5em;
+  }
+
+  a {
+    height: 100%;
+  }
+
+}
+
+.project {
+  display: block;
+  text-decoration: none;
+  font-size: .8em;
+  padding: 1em 1.2em;
+  border-radius: .4em;
+  box-shadow: 0 2px 13px -3px rgb(2 8 27 / 30%);
+}
+
+.projectTitle {
+  margin: 0 0 .5em;
+}
+
+.projectDescription {
+  font-size: .9em;
+  margin: 0;
 }

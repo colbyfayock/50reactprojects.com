@@ -5,9 +5,13 @@
 
   margin-bottom: 3rem;
 
-  @include gtXlarge {
-    width: calc(100% - #{$project-sidebar-width});
-    padding-right: 5rem;
+  &[data-with-sidebar="true"] {
+
+    @include gtXlarge {
+      width: calc(100% - #{$project-sidebar-width});
+      padding-right: 5rem;
+    }
+
   }
 
 }
