@@ -40,13 +40,13 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/colbyfayock">
+                  <a href="https://github.com/colbyfayock">
                     <span className="sronly">GitHub</span>
                     <FaGithub />
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/colbyfayock">
+                  <a href="https://www.youtube.com/colbyfayock">
                     <span className="sronly">YouTube</span>
                     <FaYoutube className={styles.footerIconYoutube} />
                   </a>
