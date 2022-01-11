@@ -11,7 +11,8 @@
   }
 
   h2 {
-    background-color: $color-purple;
+    // Temp hack to override color due to style ordering
+    background-color: $color-purple!important;
   }
 
 }

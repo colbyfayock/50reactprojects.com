@@ -2,7 +2,40 @@ import fs from 'fs';
 import path from 'path'
 import grayMatter from 'gray-matter';
 
-const PROJECTS_DIRECTORY = path.join(process.cwd(), 'src/pages/projects');
+const PROJECTS_DIRECTORY = path.join(process.cwd(), 'src/projects');
+
+/**
+ * listProjects
+ */
+
+export async function listProjects() {
+  const filenames = fs.readdirSync(PROJECTS_DIRECTORY);
+
+  if ( !filenames || !Array.isArray(filenames) ) {
+    throw new Error('Failed to read project directory');
+  }
+
+  return filenames.map(filename => {
+    const filePath = path.join(PROJECTS_DIRECTORY, filename)
+    const slug = filename.replace('.mdx', '');
+    return {
+      filename,
+      filePath,
+      slug
+    }
+  });
+}
+
+export async function getProjectBySlug(slug) {
+  const filePath = path.join(PROJECTS_DIRECTORY, `${slug}.mdx`);
+  const content = fs.readFileSync(filePath, 'utf8');
+  const matter = grayMatter(content);
+  return {
+    slug,
+    filePath,
+    ...matter
+  }
+}
 
 /**
  * readProjectsFromDirectory

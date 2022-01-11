@@ -8,7 +8,8 @@
   }
 
   h2 {
-    background-color: $color-blue-medium;
+    // Temp hack to override color due to style ordering
+    background-color: $color-blue-medium!important;
   }
 
   ul {

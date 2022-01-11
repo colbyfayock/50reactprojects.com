@@ -21,10 +21,6 @@ import Hero from 'components/Hero';
 import Footer from 'components/Footer';
 import FormEbook from 'components/FormEbook';
 
-import imgPreviewBrief from 'images/50-react-projects-business-real-world-ecommerce-store.jpg';
-import imgPreviewCover from 'images/50-react-projects-cover-business-real-world.jpg';
-import imgPreviewLayout from 'images/50-react-projects-ecommerce-store-layout.jpg';
-
 const motionPreviewImages = {
   whileHover: {
     scale: 1.2,
@@ -81,9 +77,9 @@ export default function Home() {
           </p>
 
           <div className={styles.previewimage}>
-            <motion.img width="612" height="792" src={imgPreviewBrief} alt="Example Ecommerce Store Project Brief" {...motionPreviewImages} />
-            <motion.img width="612" height="792" src={imgPreviewCover} alt="Example Business and Real-world Cover" {...motionPreviewImages} />
-            <motion.img width="612" height="792" src={imgPreviewLayout} alt="Example Ecommerce Store Design Layout" {...motionPreviewImages} />
+            <motion.img width="612" height="792" src="/images/50-react-projects-business-real-world-ecommerce-store.jpg" alt="Example Ecommerce Store Project Brief" {...motionPreviewImages} />
+            <motion.img width="612" height="792" src="/images/50-react-projects-cover-business-real-world.jpg" alt="Example Business and Real-world Cover" {...motionPreviewImages} />
+            <motion.img width="612" height="792" src="/images/50-react-projects-ecommerce-store-layout.jpg" alt="Example Ecommerce Store Design Layout" {...motionPreviewImages} />
           </div>
 
         </Container>
