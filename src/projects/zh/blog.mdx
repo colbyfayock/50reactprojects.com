@@ -1,0 +1,73 @@
+---
+title: 'Blog'
+layout: 'project'
+topic: 'Personal & Portfolio'
+description: 'Create a blog that you can use to share your career experiences and projects.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Blog
+
+Create a <strong className="color-blue">blog</strong> that you can use to share your <strong className="color-purple">career experiences</strong> and <strong className="color-purple">projects</strong>.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+With any career, having a blog to share your experiences is a good way let people know what you’re working on and help others learn from your experiences. It’s also a way to reinforce what you’ve learned and be able to reference it in the future.
+
+## Level 1
+
+To be able to share your experiences, you need a website structure that will allow you to create new content and manage existing content. One way to do this is by creating markdown files that your website sources to create new pages and display the posts.
+
+Create a blog using markdown files as the content source.
+
+<LoginRequired>
+
+## Level 2
+
+Having your content in markdown files is a good way to manage static content, but you might not want to have to edit code every time you write or edit a post.
+
+Integrate a content management system that allows you to add new content or edit existing with a nice user interface.
+
+## Level 3
+
+If you’re sharing code on your blog, HTML natively supports the code and pre tags that help you format code in a readable way. But that doesn’t include syntax highlighting that helps improve readability.
+
+Integrate a syntax highlighter that makes code blocks more readable.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+ label: 'Create a blog',
+ },
+ 'Add first static content',
+ 'Source 'Integrate CMS',
+ code to syntax highlighting ',
+ }
+]} />
+
+## Toolbox
+- Netlify CMS
+- Prism.js
+
+## Resources
+- [bit.ly/3jGUnVF](https://bit.ly/3jGUnVF)
+
+</ProjectSidebar>
