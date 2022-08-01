@@ -1,0 +1,75 @@
+---
+title: 'Highlight & Share'
+layout: 'project'
+topic: 'Project Add-Ons'
+description: 'Add a highlight and share feature that shows a share button when someone highlights text.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Highlight & Share
+
+Add a <strong className="color-blue">highlight and share</strong> feature that shows a <strong className="color-purple">share button</strong> when someone <strong className="color-purple">highlights text</strong>.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+Having a blog is the first step to getting your thoughts and experiences out on the web, but the next step is to create an environment where people can and want to share it with their own audience.
+
+## Level 1
+
+Having a way to easily share content on social media like Twitter makes it more likely for someone to share it. A way to do that is having a button that when someone clicks it, opens up a new share dialogue.
+
+Add share buttons to blog posts on a webpage that when clicked, open a new dialogue to create a social post.
+
+<LoginRequired>
+
+## Level 2
+
+When someone’s reading your blog, sometimes particular points resonate more than others. Someone might want to share and quote that specific line of text.
+
+Add a dialogue box that displays when text is highlighted. The box should include links to share the article that includes only the text highlighted and a link to the post.
+
+## Level 3
+
+People on social media seem to engage more with content that includes nice images. Having a big image with a quote and website info is a great way to improve sharing.
+
+Use Cloudinary to automatically generate an image with the highlighted text that can be used to post to social media.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+ label: 'Add share buttons',
+ },
+ dialogue box',
+ 'Trigger on highlight',
+ 'Include highlighted text',
+ Cloudinary template',
+ 'Create dynamic image',
+ }
+]} />
+
+## Toolbox
+- Window.getSelection()
+- Cloudinary
+
+## Resources
+- [bit.ly/2PAWNr1](https://bit.ly/2PAWNr1)
+
+</ProjectSidebar>
