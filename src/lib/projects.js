@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { promises as fs } from 'fs';
 import path from 'path'
 import grayMatter from 'gray-matter';
 
@@ -9,7 +9,7 @@ const PROJECTS_DIRECTORY = path.join(process.cwd(), 'src/projects');
  */
 
 export async function listProjects() {
-  const filenames = fs.readdirSync(PROJECTS_DIRECTORY);
+  const filenames = await fs.readdir(PROJECTS_DIRECTORY);
 
   if ( !filenames || !Array.isArray(filenames) ) {
     throw new Error('Failed to read project directory');
@@ -28,7 +28,7 @@ export async function listProjects() {
 
 export async function getProjectBySlug(slug) {
   const filePath = path.join(PROJECTS_DIRECTORY, `${slug}.mdx`);
-  const content = fs.readFileSync(filePath, 'utf8');
+  const content = await fs.readFile(filePath, 'utf8');
   const matter = grayMatter(content);
   return {
     slug,
@@ -42,15 +42,15 @@ export async function getProjectBySlug(slug) {
  */
 
 export async function readProjectsFromDirectory() {
-  const filenames = fs.readdirSync(PROJECTS_DIRECTORY);
+  const filenames = await fs.readdir(PROJECTS_DIRECTORY);
 
   if ( !filenames || !Array.isArray(filenames) ) {
     throw new Error('Failed to read project directory');
   }
 
-  return filenames.map(filename => {
+  return await Promise.all(filenames.map(async filename => {
     const filePath = path.join(PROJECTS_DIRECTORY, filename)
-    const content = fs.readFileSync(filePath, 'utf8')
+    const content = await fs.readFile(filePath, 'utf8')
     const matter = grayMatter(content);
 
     return {
@@ -58,7 +58,7 @@ export async function readProjectsFromDirectory() {
       content,
       matter
     }
-  })
+  }))
 }
 
 /**
