@@ -1,0 +1,75 @@
+---
+title: 'Goal Manager'
+layout: 'project'
+topic: 'Personal & Portfolio'
+description: 'Create a goal management dashboard to add, track, and modify your goals.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Goal Manager
+
+Create a <strong className="color-blue">goal management</strong> dashboard to add, track, and modify <strong className="color-purple">your goals</strong>.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+Goals are a great way to help us set a challenge that we want to push ourselves to reach. Further, making those goals public is a way to help keep accountable to others and gain support from the community.
+
+## Level 1
+
+To get started with goals, you need to have them. If you don’t already have some, take some time to think about it, but ultimately, these will be your public goals.
+
+Create a list of goals and put them on your website.
+
+<LoginRequired>
+
+## Level 2
+
+Your goals are public but they’re a pain to keep track of. Every progress update requires a code change and manually updating the UI.
+
+Add your goals to Airtable and use the API to dynamically request your list of goals.
+
+## Level 3
+
+Showing your goals is a great first step, but people want to know how you’re doing. How can you keep yourself accountable and show the world your progress?
+
+Add a field to Airtable that tracks progress of each goal and show that progress status on your website.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+ label: 'Create goals',
+ },
+ 'Add goals to website',
+ 'Copy Airtable',
+ 'Request with API',
+ 'Display dynamically',
+ progress field(s)',
+ 'Show in UI',
+ }
+]} />
+
+## Toolbox
+- Airtable
+
+## Resources
+- [bit.ly/30d2vVV](https://bit.ly/30d2vVV)
+
+</ProjectSidebar>
