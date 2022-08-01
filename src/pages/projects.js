@@ -90,9 +90,9 @@ export default function Projects({ projects }) {
                     <h3>{ title }</h3>
                     <ul>
                       {projects.map(project => {
-                        const { id, path, title, description } = project;
+                        const { slug, path, title, description } = project;
                         return (
-                          <li key={id}>
+                          <li key={slug}>
                             <Link href={path}>
                               <a className={styles.project}>
                                 <p className={styles.projectTitle}>

@@ -5,26 +5,40 @@ import grayMatter from 'gray-matter';
 const PROJECTS_DIRECTORY = path.join(process.cwd(), 'src/projects');
 
 /**
- * listProjects
+ * getProjects
  */
 
-export async function listProjects() {
+export async function getProjects() {
   const filenames = await fs.readdir(PROJECTS_DIRECTORY);
 
   if ( !filenames || !Array.isArray(filenames) ) {
     throw new Error('Failed to read project directory');
   }
 
-  return filenames.map(filename => {
-    const filePath = path.join(PROJECTS_DIRECTORY, filename)
+  return await Promise.all(filenames.map(async filename => {
     const slug = filename.replace('.mdx', '');
+
+    const filePath = path.join(PROJECTS_DIRECTORY, filename)
+    const content = await fs.readFile(filePath, 'utf8')
+
+    const matter = grayMatter(content);
+
     return {
-      filename,
-      filePath,
-      slug
+      slug,
+      path: `/projects/${slug}`,
+      file: {
+        filename,
+        content
+      },
+      excerpt: matter.excerpt,
+      ...matter.data,
     }
-  });
+  }));
 }
+
+/**
+ * getProjectBySlug
+ */
 
 export async function getProjectBySlug(slug) {
   const filePath = path.join(PROJECTS_DIRECTORY, `${slug}.mdx`);
@@ -35,52 +49,6 @@ export async function getProjectBySlug(slug) {
     filePath,
     ...matter
   }
-}
-
-/**
- * readProjectsFromDirectory
- */
-
-export async function readProjectsFromDirectory() {
-  const filenames = await fs.readdir(PROJECTS_DIRECTORY);
-
-  if ( !filenames || !Array.isArray(filenames) ) {
-    throw new Error('Failed to read project directory');
-  }
-
-  return await Promise.all(filenames.map(async filename => {
-    const filePath = path.join(PROJECTS_DIRECTORY, filename)
-    const content = await fs.readFile(filePath, 'utf8')
-    const matter = grayMatter(content);
-
-    return {
-      filename,
-      content,
-      matter
-    }
-  }))
-}
-
-/**
- * getProjects
- */
-
-export async function getProjects() {
-  const projects = await readProjectsFromDirectory();
-
-  return projects.map(({ filename, content = {}, matter = {} }) => {
-    const { data } = matter;
-    const id = filename.replace('.mdx', '');
-    return {
-      file: {
-        filename,
-        // content
-      },
-      ...data,
-      id,
-      path: `/projects/${id}`
-    }
-  })
 }
 
 /**

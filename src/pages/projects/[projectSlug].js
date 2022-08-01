@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 
-import { listProjects, getProjectBySlug } from 'lib/projects';
+import { getProjects, getProjectBySlug } from 'lib/projects';
 
 import Layout from 'components/Layout';
 import Section from 'components/Section';
@@ -53,7 +53,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const projects = await listProjects();
+  const projects = await getProjects();
   return {
     paths: projects.map(project => {
       return {
