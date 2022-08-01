@@ -1,0 +1,3 @@
+files:
+  - source: /src/projects
+    translation: /src/projects/%two_letters_code%/%original_file_name%
