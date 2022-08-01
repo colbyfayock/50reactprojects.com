@@ -1,0 +1,74 @@
+---
+title: 'Community Chat Bot'
+layout: 'project'
+topic: 'Fun & Interesting'
+description: 'Create and deploy a chat bot that interacts with and moderates a discord community.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Community Chat Bot
+
+Create and deploy a <strong className="color-blue">chat bot</strong> that <strong className="color-purple">interacts with</strong> and <strong className="color-purple">moderates</strong> a <strong className="color-purple">discord</strong> community.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+With the rise of Slack and Discord, people have swarmed to online communities for a place to chat and interact with others who share the same experiences. This can be great, but having a little robot guidance can help
+
+## Level 1
+
+People might not ever notice a bot, but what if someone tried to interact with it?
+
+Create a bot and configure it to respond to a message when sent to a chat.
+
+<LoginRequired>
+
+## Level 2
+
+We want people to feel welcome when they join our community. Having a welcome message is a great way to give people a little bit of information about the community.
+
+Create a welcome message that gets sent to new members of the community when joining.
+
+## Level 3
+
+Not only do we want people to feel welcome, we want people to abide by a code of conduct. It’s important to create safe areas where everyone feels welcome.
+
+Require people to accept the welcome message with an emoji before being allowed to enter the community.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+ label: 'Create a bot app',
+ },
+ Discord API key',
+ test server',
+ 'Test on 'Add static responses',
+ welcome message',
+ 'Configure access rules',
+ }
+]} />
+
+## Toolbox
+- Discord Developer Portal
+
+## Resources
+- [bit.ly/3jLpQpA](https://bit.ly/3jLpQpA)
+
+</ProjectSidebar>
