@@ -1,0 +1,72 @@
+---
+title: 'CSS Animation Library'
+layout: 'project'
+topic: 'Tools & Libraries'
+description: 'Create a CSS library that includes easy-to-use loading spinners and animations.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# CSS Animation Library
+
+Create a <strong className="color-blue">CSS library</strong> that includes easy-to-use <strong className="color-purple">loading spinners</strong> and <strong className="color-purple">animations</strong>.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+When dealing with a website that makes any type of request, often you’ll want to provide some sort of visual feedback so the person knows the app is responsive. We can do that with loading indicators that only show when the request is loading.
+
+## Level 1
+
+In order to show a loading indication, we need to have them available. Sometimes they take the form of something spinning around, other times they might appear to flash and glow with light gradients and colors.
+
+Create loading icons and indicators that animate with CSS.
+
+<LoginRequired>
+
+## Level 2
+
+More often than not, a single style doesn’t fit all websites or apps. We want to be able to provide a way for others to customize it to their own liking including the color of the loading indicator and even the size.
+
+Add the ability to customize color and size of the spinners and animations with CSS.
+
+## Level 3
+
+When creating a library, we want to be able to provide a way for someone to easily import it and use it in their project.
+
+Package and configure the spinners and animations so they can easily be used in another project.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+ label: 'Create loading icons',
+ },
+ 'Animate 'Add style customization',
+ 'Package library',
+ 'Make easy to import',
+ }
+]} />
+
+## Toolbox
+- Sass
+
+## Resources
+- [bit.ly/3gFEmx3](https://bit.ly/3gFEmx3)
+
+</ProjectSidebar>
