@@ -1,0 +1,74 @@
+---
+title: 'Video Gallery'
+layout: 'project'
+topic: 'Fun & Interesting'
+description: 'Create a gallery of video tutorials that pulls from a React YouTube playlist.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Video Gallery
+
+Create a gallery of <strong className="color-blue">video tutorials</strong> that pulls from a <strong className="color-purple">React YouTube playlist</strong>.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+YouTube playlists are a great way to collect videos with a bigger theme whether it’s your own videos or someone else’s. It can help people focus on a particular topic like a particular set of tutorials.
+
+## Level 1
+
+The great thing about YouTube, is they make it easy to embed their player. This lets us easily add a playlist to any page.
+
+Create a page that embeds a playlist using YouTube’s player.
+
+<LoginRequired>
+
+## Level 2
+
+When using YouTube’s player, you don’t get much control over the look and feel. The good news, is they have an API that lets us get information about a playlist so we can use it on our page.
+
+Fetch the YouTube playlist using the YouTube API and display the results on a page with links to each video.
+
+## Level 3
+
+Linking to YouTube helps let people easily watch a video, but that takes them away from your website. How can we let people watch the videos while avoiding them navigating away?
+
+Add an autoplaying embed of a video to the page when someone selects a video.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+ label: 'Find a playlist',
+ },
+ 'Copy embed code',
+ 'Embed on page',
+ 'Fetch playlist with API',
+ 'List videos video click',
+ }
+]} />
+
+## Toolbox
+- YouTube API
+- react-youtube
+
+## Resources
+- [bit.ly/3g9DnFg](https://bit.ly/3g9DnFg)
+
+</ProjectSidebar>
