@@ -121,6 +121,9 @@ export default function Projects({ projects }) {
 
 export async function getStaticProps() {
   const projects = await getProjects();
+
+  projects.forEach(project => delete project.file);
+
   return {
     props: {
       projects: groupProjectsByTopic(projects, TOPIC_ORDER)
