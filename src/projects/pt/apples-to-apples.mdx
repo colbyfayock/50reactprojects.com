@@ -1,0 +1,73 @@
+---
+title: 'Apples to Apples'
+layout: 'project'
+topic: 'Games & Puzzles'
+description: 'Create a card game that matches words and phrases to fill-in-the-blank statements.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Apples to Apples
+
+Create a <strong className="color-blue">card game</strong> that matches words and phrases to <strong className="color-purple">fill-in-the-blank statements</strong>.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+Apples to Apples describes itself as “a party game for horrible people”. The game involves a deck of cards where one type of card presents a fill-in-the-blank phrase with other cards that are meant to fill in those phrases.
+
+## Level 1
+
+The game revolves around the deck of cards with two types. In order to play, we’ll want the ability to choose between two different types.
+
+Create a deck of cards with the two card types that allow you to cycle through the different options.
+
+<LoginRequired>
+
+## Level 2
+
+While everyone uses a single fill-in-the-blank card, everyone playing the game gets a few of their own word or phrase cards.
+
+Add the ability to assign groups of cards to others people playing the game.
+
+## Level 3
+
+Part of the fun with Apples to Apples is the funny phrases that end up coming up with the mixing of words and phrases. That’s a perfect opportunity to share with friends!
+
+Add the ability to save funny matches to someone’s device or share them on social media.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+ label: 'Create 2 decks of cards',
+ },
+ 'Add ability to cycle card assigning',
+ match saving',
+ sharing',
+ }
+]} />
+
+## Toolbox
+
+- 
+
+## Resources
+- [bit.ly/3kpEKlJ](https://bit.ly/3kpEKlJ)
+
+</ProjectSidebar>
