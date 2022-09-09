@@ -1,9 +1,9 @@
 import styles from './LoginRequired.module.scss';
 
-const LoginRequired = () => {
-  const isAuthorization = false;
+const LoginRequired = ({ children }) => {
+  const isAuthorized = false;
 
-  if ( !isAuthorization ) {
+  if ( !isAuthorized ) {
     return (
       <p className={styles.loginRequired}>
         More levels including the ability to save your progress coming soon!
