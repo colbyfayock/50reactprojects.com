@@ -1,6 +1,6 @@
 import styles from './Checklist.module.scss';
 
-const Checklist = ({ items = [], checkable = true, onChange }) => {
+const Checklist = ({ items = [], checkedItems = [], checkable = true, onChange }) => {
   if ( !Array.isArray(items) ) {
     throw new Error(`Failed to render Checklist: Invalid items type ${typeof items}`)
   }
@@ -8,7 +8,8 @@ const Checklist = ({ items = [], checkable = true, onChange }) => {
   return (
     <ul className={styles.checklist} data-is-checkable={checkable}>
       {items.map((item = {}, i) => {
-        const { label, checked = false } = item;
+        const { label } = item;
+        const checked = checkedItems.find(checkedItem => checkedItem === label);
         const value = item?.value || label;
         return (
           <li key={i}>
