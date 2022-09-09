@@ -106,7 +106,7 @@ export default function Project({ source, frontMatter, path, slug }) {
                 />
               );
             },
-        }}/>
+          }}/>
         </ProjectContainer>
       </Section>
     </Layout>
