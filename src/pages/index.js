@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 import {
   FaBriefcase,
   FaAddressBook,
@@ -31,9 +31,9 @@ const motionPreviewImages = {
 export default function Home() {
   return (
     <Layout displayNav={false}>
-      <Helmet>
-        <meta property="og:type" content="book" />
-      </Helmet>
+      <Head>
+        <meta property="og:type" content="book" key="og:type" />
+      </Head>
 
       <Section backgroundColor="blue-dark">
 

@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import { useSession } from 'next-auth/react';
 
 import { getProjects, getProjectBySlug } from 'lib/projects';
 
@@ -21,6 +22,11 @@ export default function Project({ source, frontMatter, path }) {
     ...frontMatter,
     path
   }
+
+  const title = `${ frontMatter.title } - 50 React Projects`;
+
+  const { data: session } = useSession();
+  const userId = session?.user.id;
 
   const [checkedItems, setCheckedItems] = useState([]);
 
@@ -45,24 +51,28 @@ export default function Project({ source, frontMatter, path }) {
 
   return (
     <Layout frontMatter={projectFrontMatter}>
+      <Head>
+        <title key="title">{ title }</title>
+      </Head>
       <Section className={styles.project}>
         <ProjectContainer>
-        <MDXRemote {...source} components={{
-          ProjectHeader,
-          ProjectContent,
-          LoginRequired,
-          ProjectSidebar,
-          Checklist: (props) => {
-            return (
-              <Checklist
-                {...props}
-                checkable={false}
-                checkedItems={checkedItems}
-                onChange={onChecklistChange}
-              />
-            );
-          },
-      }}/>
+          <MDXRemote {...source} components={{
+            ProjectHeader,
+            ProjectContent,
+            LoginRequired,
+            ProjectSidebar,
+            Checklist: (props) => {
+              return (
+                <Checklist
+                  {...props}
+                  checkable={!!session}
+                  checkedItems={checkedItems}
+                  onChange={onChecklistChange}
+
+                />
+              );
+            },
+          }}/>
         </ProjectContainer>
       </Section>
     </Layout>

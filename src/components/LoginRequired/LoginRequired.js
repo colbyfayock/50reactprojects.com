@@ -1,7 +1,11 @@
+import { useSession } from 'next-auth/react';
+
 import styles from './LoginRequired.module.scss';
 
 const LoginRequired = ({ children }) => {
-  const isAuthorized = false;
+  const { data: session } = useSession()
+
+  const isAuthorized = !!session?.user;
 
   if ( !isAuthorized ) {
     return (
