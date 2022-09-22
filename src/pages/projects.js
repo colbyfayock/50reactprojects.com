@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 import Link from 'next/link';
 import {
   FaBriefcase,
@@ -72,9 +72,9 @@ export default function Projects({ projects }) {
 
   return (
     <Layout frontMatter={frontMatter}>
-      <Helmet>
-        <title>{ frontMatter.title }</title>
-      </Helmet>
+      <Head>
+        <title key="title">Projects - 50 React Projects</title>
+      </Head>
 
       <Section className={styles.projects}>
         <Container display="flex">

@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
-import { useSession } from "next-auth/react"
+import { useSession } from 'next-auth/react';
 
 import { getProjects, getProjectBySlug } from 'lib/projects';
 import { getProgress, createProgress } from 'lib/harperdb';
@@ -29,6 +29,8 @@ export default function Project({ source, frontMatter, path, slug }) {
     ...frontMatter,
     path
   }
+
+  const title = `${ frontMatter.title } - 50 React Projects`;
 
   useEffect(() => {
     if ( !userId ) return;
@@ -88,6 +90,9 @@ export default function Project({ source, frontMatter, path, slug }) {
 
   return (
     <Layout frontMatter={projectFrontMatter}>
+      <Head>
+        <title key="title">{ title }</title>
+      </Head>
       <Section className={styles.project}>
         <ProjectContainer>
           <MDXRemote {...source} components={{

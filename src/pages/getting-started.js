@@ -10,27 +10,11 @@ import Container from '../components/Container';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 
-const TITLE = '50 Projects for React & the Static Web';
-const DESCRIPTION = 'Learn by doing with this FREE ebook! Dive in with 50 projects complete with project briefs and wireframes.';
-
 export default function GettingStarted() {
   return (
     <>
       <Head>
-        <title>{ TITLE }</title>
-        <meta name="description" content={DESCRIPTION} />
-
-        <meta property="og:url" content="https://50reactprojects.com/" />
-        <meta property="og:type" content="book" />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:image" content="https://50reactprojects.com/images/50-react-projects-og.jpg" />
-        <meta property="og:image:width" content="2024" />
-        <meta property="og:image:height" content="1012" />
-        <meta property="og:image:alt" content="50 Projects for React & the Static Web - Learn by doing with this FREE ebook!" />
-
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" href="/images/favicon-512x512.png" />
+        <title key="title">Getting Started - 50 React Projects</title>
       </Head>
 
       <Main>

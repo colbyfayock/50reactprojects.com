@@ -1,15 +1,17 @@
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 import Section from 'components/Section';
 import Container from 'components/Container';
 import LogoHorizontal from 'components/LogoHorizontal';
+import Button from 'components/Button';
+
 
 import styles from './Nav.module.scss';
 
 const Nav = () => {
-  const { data: session } = useSession()
+  const { data: session } = useSession();
   return (
     <nav className={styles.nav}>
       <Section className={styles.navSection}>
@@ -22,23 +24,16 @@ const Nav = () => {
             </Link>
           </div>
           <ul className={styles.navLinks}>
-            <li>
-              <a href="https://github.com/colbyfayock/50-projects-for-react-and-the-static-web">
-                <FaGithub />
-                <span className="sronly">GitHub</span>
-              </a>
-            </li>
-            <li>
+            <li className={`${styles.navAccount} ${session ? styles.navAccountAuth : ''}`}>
               { session && (
                 <>
-                  Signed in as {session.user.email} <br />
-                  <button onClick={() => signOut()}>Sign out</button>
+                  <span>{session.user.email}</span>
+                  <Button onClick={() => signOut()}>Sign out</Button>
                 </>
               )}
               { !session && (
                 <>
-                  Not signed in <br />
-                  <button onClick={() => signIn()}>Sign in</button>
+                  <Button onClick={() => signIn()}>Sign in</Button>
                 </>
               )}
             </li>
