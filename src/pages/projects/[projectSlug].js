@@ -5,6 +5,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import { useSession } from 'next-auth/react';
 
 import { getProjects, getProjectBySlug } from 'lib/projects';
+import { getProgress, createProgress } from 'lib/harperdb';
 
 import Layout from 'components/Layout';
 import Section from 'components/Section';
@@ -17,7 +18,13 @@ import Checklist from 'components/Checklist';
 
 import styles from 'styles/templates/Project.module.scss';
 
-export default function Project({ source, frontMatter, path }) {
+export default function Project({ source, frontMatter, path, slug }) {
+  const { data: session } = useSession();
+  const userId = session?.user.id;
+
+  const [checkedItems, setCheckedItems] = useState();
+  const [progressId, setProgressId] = useState();
+
   const projectFrontMatter = {
     ...frontMatter,
     path
@@ -25,10 +32,32 @@ export default function Project({ source, frontMatter, path }) {
 
   const title = `${ frontMatter.title } - 50 React Projects`;
 
-  const { data: session } = useSession();
-  const userId = session?.user.id;
+  useEffect(() => {
+    if ( !userId ) return;
 
-  const [checkedItems, setCheckedItems] = useState([]);
+    (async function run() {
+      const { data: progress } = await fetch(`/api/progress?projectId=${slug}&userId=${userId}`).then(r => r.json())
+
+      if ( progress[0] ) {
+        setProgressId(progress[0].id);
+        setCheckedItems(progress[0].checkedItems || []);
+        return;
+      }
+
+      if ( !progress || progress.length === 0 ) {
+        const { data: newProgress } = await fetch('/api/progress/create', {
+          method: 'POST',
+          body: JSON.stringify({
+            projectId: slug,
+            userId
+          })
+        }).then(r => r.json())
+        setProgressId(newProgress.id);
+      }
+
+      setCheckedItems([]);
+    })();
+  }, [slug, userId]);
 
   /**
    * onChecklistChange
@@ -45,6 +74,16 @@ export default function Project({ source, frontMatter, path }) {
     } else {
       updatedCheckedItems = prev.filter(value => value !== e.target.value);
     }
+
+    const result = await fetch('/api/progress/update', {
+      method: 'POST',
+      body: JSON.stringify({
+        id: progressId,
+        projectId: slug,
+        userId,
+        checkedItems: updatedCheckedItems
+      })
+    }).then(r => r.json())
 
     setCheckedItems(updatedCheckedItems);
   }
