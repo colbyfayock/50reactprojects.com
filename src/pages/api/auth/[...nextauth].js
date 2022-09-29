@@ -1,6 +1,8 @@
 import NextAuth from 'next-auth';
 import TwitterProvider from 'next-auth/providers/twitter';
 
+import { HarperDBAdapter } from '../../../adapters/harperdb';
+
 export default NextAuth({
   providers: [
     TwitterProvider({
@@ -8,4 +10,5 @@ export default NextAuth({
       clientSecret: process.env.TWITTER_SECRET
     }),
   ],
+  adapter: HarperDBAdapter(),
 });
