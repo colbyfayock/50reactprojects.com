@@ -1,0 +1,73 @@
+---
+title: 'Metrics Dashboard'
+layout: 'project'
+topic: 'Business & Real-World'
+description: 'Create an analytics dashboard that shows historical performance of tech stocks.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Metrics Dashboard
+
+Create an <strong className="color-blue">analytics dashboard</strong> that shows <strong className="color-purple">historical performance</strong> of <strong className="color-purple">tech stocks</strong>.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+Stocks are all about investment and understanding the performance of your investments is important to making future decisions. This knowledge could be the difference between a huge financial loss or a huge gain.
+
+## Level 1
+
+To understand the performance, you need the to see the data that shows how well a particular stock is doing.
+
+Create a table that shows historical data of several tech stocks.
+
+<LoginRequired>
+
+## Level 2
+
+Loading a bunch of data in a table isn’t always the easiest way to understand the bigger picture. Often, charts are a tool that can show trends in data.
+
+Create a dashboard of charts that display metrics for key performance indicators.
+
+## Level 3
+
+Even though the charts are great for a high level view, being able to “drill down” into the data is helpful if you want to understand more about a particular chart or sample of data.
+
+Link each chart to a page that provides raw, in depth data for that performance indicator.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+ label: 'Choose tech stocks',
+ },
+ 'Request stock data',
+ 'Add data to table',
+ charts for dashboard of charts',
+ pages raw }
+]} />
+
+## Toolbox
+- Chart.js
+- Marketstack
+
+## Resources
+- [bit.ly/2WYSDNt](https://bit.ly/2WYSDNt)
+
+</ProjectSidebar>

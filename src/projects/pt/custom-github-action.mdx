@@ -1,0 +1,74 @@
+---
+title: 'Custom GitHub Action'
+layout: 'project'
+topic: 'Tools & Libraries'
+description: 'Create a custom GitHub Action that notifies Slack with pull request updates.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Custom GitHub Action
+
+Create a custom <strong className="color-blue">GitHub Action</strong> that notifies <strong className="color-purple">Slack</strong> with <strong className="color-purple">pull request updates</strong>.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+GitHub Actions are a powerful tool that allows you to automate code tasks and really anything on a scheduled or triggered basis. One great use is to send notifications to Slack whenever a new Pull Request is made.
+
+## Level 1
+
+One of the hooks we can tap into with GitHub Actions is the ability to run some code when Pull Requests are created. We can also grab contextual information about that Pull Request to get details like who created the request.
+
+Create a GitHub Action that logs information about a Pull Request when it’s created.
+
+<LoginRequired>
+
+## Level 2
+
+Logging info to the GitHub Action console is useful to make sure it works, but that’s not practically helpful when trying to find out that information as it happens.
+
+Configure the GitHub Action to post the message to Slack with a link to the Pull Request.
+
+## Level 3
+
+In order to make a GitHub Action useful between different projects, it helps to provide the ability to pass in configuration options to the workflow.
+
+Add input configuration options so other projects can use the action with their own Slack and git instance.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+ label: 'Create a custom Action',
+ },
+ 'Trigger on Pull Request',
+ 'Log Request details',
+ 'Post details to Slack',
+ 'Add link',
+ }
+]} />
+
+## Toolbox
+- Slack API
+- ncc
+
+## Resources
+- [bit.ly/2PBwSiT](https://bit.ly/2PBwSiT)
+
+</ProjectSidebar>

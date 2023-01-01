@@ -1,0 +1,75 @@
+---
+title: 'Website Admin'
+layout: 'project'
+topic: 'Business & Real-World'
+description: 'Create an admin dashboard to configure website settings that requires user login.'
+---
+
+import ProjectHeader from 'components/ProjectHeader';
+import ProjectContent from 'components/ProjectContent';
+import ProjectSidebar from 'components/ProjectSidebar';
+import Checklist from 'components/Checklist';
+import LoginRequired from 'components/LoginRequired';
+
+<ProjectHeader>
+
+# Website Admin
+
+Create an <strong className="color-blue">admin dashboard</strong> to configure <strong className="color-purple">website settings</strong> that requires user login.
+
+</ProjectHeader>
+
+<ProjectContent>
+
+## Brief
+
+Having to push out code every time you want to make a configuration change is time-consuming and risky. Instead,  admin dashboards allow you to provide an authenticated way of making changes on the fly.
+
+## Level 1
+
+Providing the ability to make changes to a website on the fly can be risky if it’s not safe and secure behind authentication.
+
+Create a page on a website that requires authentication to access the content.
+
+<LoginRequired>
+
+## Level 2
+
+In order to make any kind of changes in a dashboard, there needs to be a part of the site that’s configurable.
+
+Configure part of the site to be dynamic based on a setting that can be updated. (Ex: analytics ID, some text)
+
+## Level 3
+
+Once a website or app feature is dynamic based on configuration, we can set up a mechanism to change it.
+
+Create a form in the admin dashboard that updates the configuration of a feature.
+
+</LoginRequired>
+
+</ProjectContent>
+
+<ProjectSidebar>
+
+## To Do
+
+<Checklist checkable={false} items={[
+  {
+ label: 'Create a new page',
+ },
+ an admin 'Require login for admin',
+ 'Add 'Integrate authentication',
+ configurable settings',
+ configuration form',
+ 'Update config on save',
+ 'Deploy or update }
+]} />
+
+## Toolbox
+- Auth0
+- Auth0 React SDK
+
+## Resources
+- [bit.ly/3f6t9ny](https://bit.ly/3f6t9ny)
+
+</ProjectSidebar>
