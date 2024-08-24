@@ -110,12 +110,6 @@ $footer-background-color: $color-blue-dark;
   width: 100%;
   flex-grow: 1;
 
-  @include gtXlarge {
-    justify-content: flex-end;
-    width: auto;
-    margin-top: 0;
-  }
-
   ul {
     display: flex;
     list-style: none;

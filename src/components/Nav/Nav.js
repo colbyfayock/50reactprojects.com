@@ -18,9 +18,7 @@ const Nav = () => {
         <Container className={styles.navContainer}>
           <div className={styles.navLogo}>
             <Link href="/">
-              <a>
-                <LogoHorizontal />
-              </a>
+              <LogoHorizontal />
             </Link>
           </div>
           <ul className={styles.navLinks}>

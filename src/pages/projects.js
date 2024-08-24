@@ -93,15 +93,13 @@ export default function Projects({ projects }) {
                         const { slug, path, title, description } = project;
                         return (
                           <li key={slug}>
-                            <Link href={path}>
-                              <a className={styles.project}>
-                                <p className={styles.projectTitle}>
-                                  <strong>{ title }</strong>
-                                </p>
-                                <p className={styles.projectDescription}>
-                                  { description }
-                                </p>
-                              </a>
+                            <Link href={path} className={styles.project}>
+                              <p className={styles.projectTitle}>
+                                <strong>{ title }</strong>
+                              </p>
+                              <p className={styles.projectDescription}>
+                                { description }
+                              </p>
                             </Link>
                           </li>
                         );

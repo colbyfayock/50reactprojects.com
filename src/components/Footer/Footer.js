@@ -15,18 +15,6 @@ const Footer = () => {
     <footer className={styles.footer}>
       <Section className={styles.footerSection}>
         <Container className={[styles.footerContainer, styles.footerContentContainer]}>
-          <div>
-            <h3>Support this project on GitHub!</h3>
-            <iframe className={styles.sponsor} src="https://github.com/sponsors/colbyfayock/button" title="Sponsor colbyfayock" height="35" width="116" style={{ border: 'none' }} />
-          </div>
-          <div>
-            <h3>Moar awesome!</h3>
-            <ul>
-              <li>
-                <a href="https://jamstackhandbook.com/">Jamstack Handbook</a>
-              </li>
-            </ul>
-          </div>
           <div className={styles.footerLegal}>
             <div>
               <p>
@@ -53,7 +41,9 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <CosmoMono className={styles.footerCosmo} classNameStroke={styles.footerCosmoStroke} />
+            <a href="https://spacejelly.dev" className={styles.footerCosmo}>
+              <CosmoMono classNameStroke={styles.footerCosmoStroke} />
+            </a>
           </div>
         </Container>
       </Section>

@@ -22,9 +22,7 @@ export default function GettingStarted() {
         <Section backgroundColor="blue-dark" spacing="compact">
           <Hero>
             <Link href="/">
-              <a>
-                <LogoHorizontal />
-              </a>
+              <LogoHorizontal />
             </Link>
           </Hero>
         </Section>
@@ -48,24 +46,6 @@ export default function GettingStarted() {
               Once you find one, make sure to share on Twitter with
               the <strong>#50reactprojects</strong> hashtag to let
               others know what you're working on!
-            </p>
-
-            <div className={styles.support}>
-              <h3>Support this project!</h3>
-              <p>
-                Support this free ebook and future free videos, tutorials, and resources
-                by <a href="https://github.com/sponsors/colbyfayock">sponsoring @colbyfayock on GitHub</a>!
-              </p>
-              <iframe className={styles.sponsor} src="https://github.com/sponsors/colbyfayock/button" title="Sponsor colbyfayock" height="35" width="116" style={{ border: 'none' }} />
-            </div>
-
-            <p className={styles.producthunt}>
-              <a href="https://www.producthunt.com/posts/50-projects-for-react-the-static-web?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-50-projects-for-react-the-static-web" target="_blank">
-                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=238203&theme=light" alt="50 Projects For React & The Static Web - Learn by doing with this FREE ebook! | Product Hunt Embed" style={{
-                  width: '250px',
-                  height: '54px'
-                }} width={250} height={54} />
-              </a>
             </p>
 
           </Container>
