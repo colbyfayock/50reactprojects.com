@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import PlausibleProvider from 'next-plausible';
 
 import { GA_TRACKING_ID } from '../lib/gtag';
 
@@ -22,7 +23,9 @@ export default function Document() {
         />
       </Head>
       <body>
-        <Main />
+        <PlausibleProvider domain="50reactprojects.com" trackOutboundLinks={true}>
+          <Main />
+        </PlausibleProvider>
         <NextScript />
       </body>
     </Html>
