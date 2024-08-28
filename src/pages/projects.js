@@ -1,25 +1,15 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import {
-  FaBriefcase,
-  FaAddressBook,
-  FaPuzzlePiece,
-  FaProjectDiagram,
-  FaFlask,
-  FaLeaf,
-  FaTools,
-  FaRegClone
-} from 'react-icons/fa';
 
-import { getProjects, groupProjectsByTopic } from 'lib/projects';
+import { getProjects, groupProjectsByTopic } from '@/lib/projects';
 
 import Layout from '../components/Layout';
 import Container from '../components/Container';
 import Section from '../components/Section';
 import Article from '../components/Article';
 
-import styles from 'styles/pages/Projects.module.scss';
+import styles from '@/styles/pages/Projects.module.scss';
 
 const TITLE = 'Projects';
 const DESCRIPTION = 'Use these 50 real-world project ideas to learn by doing including building an ecommerce store and a budget manager.';
@@ -77,11 +67,11 @@ export default function Projects({ projects }) {
       </Head>
 
       <Section className={styles.projects}>
-        <Container display="flex">
+        <Container>
           <h1>Projects to Start Building</h1>
 
           <Article withSidebar={false}>
-            <h2 className="sronly">Project Ideas</h2>
+            <h2 className="sr-only">Project Ideas</h2>
             <ul className={styles.projectsList}>
               {filteredProjects.map(topic => {
                 const { projects, title } = topic;

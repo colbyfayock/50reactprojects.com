@@ -1,21 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import { useSession } from 'next-auth/react';
 
-import { getProjects, getProjectBySlug } from 'lib/projects';
+import { getProjects, getProjectBySlug } from '@/lib/projects';
 
-import Layout from 'components/Layout';
-import Section from 'components/Section';
-import ProjectContainer from 'components/ProjectContainer';
-import ProjectHeader from 'components/ProjectHeader';
-import ProjectContent from 'components/ProjectContent';
-import LoginRequired from 'components/LoginRequired';
-import ProjectSidebar from 'components/ProjectSidebar';
-import Checklist from 'components/Checklist';
-
-import styles from 'styles/templates/Project.module.scss';
+import Layout from '@/components/Layout';
+import Section from '@/components/Section';
+import Container from '@/components/Container';
+import ProjectHeader from '@/components/ProjectHeader';
+import ProjectContent from '@/components/ProjectContent';
+import LoginRequired from '@/components/LoginRequired';
+import ProjectSidebar from '@/components/ProjectSidebar';
+import Checklist from '@/components/Checklist';
 
 export default function Project({ source, frontMatter, path }) {
   const projectFrontMatter = {
@@ -26,7 +24,6 @@ export default function Project({ source, frontMatter, path }) {
   const title = `${ frontMatter.title } - 50 React Projects`;
 
   const { data: session } = useSession();
-  const userId = session?.user.id;
 
   const [checkedItems, setCheckedItems] = useState([]);
 
@@ -54,8 +51,10 @@ export default function Project({ source, frontMatter, path }) {
       <Head>
         <title key="title">{ title }</title>
       </Head>
-      <Section className={styles.project}>
-        <ProjectContainer>
+
+      <Section className="[&_h2]:px-3 [&_h2]:py-2 [&_h2]:mt-8 [&_h2:first-child]:mt-0 [&_h2]:mb-4 [&_h2]:-mx-3">
+
+        <Container className="lg:flex lg:flex-wrap">
           <MDXRemote {...source} components={{
             ProjectHeader,
             ProjectContent,
@@ -73,7 +72,7 @@ export default function Project({ source, frontMatter, path }) {
               );
             },
           }}/>
-        </ProjectContainer>
+        </Container>
       </Section>
     </Layout>
   )
