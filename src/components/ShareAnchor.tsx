@@ -34,11 +34,11 @@ const ShareAnchor = ({ children, backgroundColor = 'blue' }: ShareAnchorProps) =
   }
 
   return (
-    <Section className="py-24 md:py-30" backgroundColor={backgroundColor}>
+    <Section backgroundColor={backgroundColor} spacing="compact">
       <Container className="flex items-center justify-center flex-col md:flex-row gap-6">
-        { children || <h3 className="text-3xl font-bold m-0">Love 50 React Projects?</h3> }
+        { children || <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center m-0">Love 50 React Projects?</h3> }
         <p className="flex justify-center">
-          <Button onClick={handleOnTwitterClick} className="bg-white text-brand-blue-medium hover:bg-gray-100 transition-colors duration-200 ease-in-out">
+          <Button onClick={handleOnTwitterClick} className="bg-blue-50 text-brand-blue-medium hover:bg-white border-white transition-colors duration-200 ease-in-out">
             Share on Twitter
           </Button>
         </p>

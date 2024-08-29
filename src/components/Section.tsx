@@ -10,8 +10,8 @@ const Section = ({ children, className, backgroundColor, spacing, ...rest }: Sec
     <div 
       {...rest}
       className={cn(
-        'py-24 md:py-30',
-        spacing === 'compact' && 'py-12',
+        'py-24 md:py-36',
+        spacing === 'compact' && 'py-14 md:py-20',
         backgroundColor === 'blue' && 'text-white bg-brand-blue-medium',
         backgroundColor === 'blue-dark' && 'text-white bg-brand-blue-dark',
         backgroundColor === 'purple' && 'text-white bg-brand-purple',

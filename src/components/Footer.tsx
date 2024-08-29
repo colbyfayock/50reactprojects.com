@@ -9,8 +9,8 @@ const Footer = () => {
   const authorUrl = 'https://twitter.com/colbyfayock';
 
   return (
-    <footer className="bg-brand-blue-dark text-white text-opacity-80">
-      <Section className="text-center py-2 m-0">
+    <footer className="bg-brand-blue-dark text-blue-100">
+      <Section className="text-center py-2 md:py-4 m-0">
         <Container className="flex flex-row items-center justify-center text-center py-4">
           <div className="flex justify-center items-center gap-4">
             <div>
@@ -21,19 +21,19 @@ const Footer = () => {
                 <li>
                   <a href="https://twitter.com/colbyfayock">
                     <span className="sr-only">Twitter</span>
-                    <FaTwitter className="w-6 h-6" />
+                    <FaTwitter className="text-blue-100 hover:text-white w-6 h-6" />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.youtube.com/colbyfayock">
                     <span className="sr-only">YouTube</span>
-                    <FaYoutube className="w-6 h-6" />
+                    <FaYoutube className="text-blue-100 hover:text-white w-6 h-6" />
                   </a>
                 </li>
                 <li>
                   <a href="https://github.com/colbyfayock">
                     <span className="sr-only">GitHub</span>
-                    <FaGithub className="w-6 h-6" />
+                    <FaGithub className="text-blue-100 hover:text-white w-6 h-6" />
                   </a>
                 </li>
               </ul>

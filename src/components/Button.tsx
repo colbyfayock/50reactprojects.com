@@ -6,7 +6,7 @@ const Button = ({ children, className, ...rest }: ButtonProps) => {
   return (
     <button
       {...rest}
-      className={cn('bg-brand-blue-medium text-white py-3 px-4 focus:outline-none focus:ring focus:ring-blue-400 rounded cursor-pointer', className)}
+      className={cn('font-bold text-xl uppercase text-white bg-brand-blue-medium px-4 py-3 border-[3px] border-brand-blue-medium focus:border-blue-400 focus:outline-none rounded cursor-pointer', className)}
     >
       { children }
     </button>

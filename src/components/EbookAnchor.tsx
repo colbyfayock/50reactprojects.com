@@ -4,11 +4,11 @@ import FormEbook from '@/components/FormEbook';
 
 const EbookAnchor = () => {
   return (
-    <Section className="text-center py-12">
+    <Section className="text-center" spacing="compact">
       <Container>
-        <h2 className="text-5xl m-0">Start Doing Now</h2>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-6 sm:mb-12">Start Doing Now</h2>
 
-        <p className="text-3xl my-6 mb-8">
+        <p className="text-xl sm:text-2xl md:text-4xl my-6 mb-8">
           Get all projects as an ebook right to your inbox for <strong>FREE</strong>!
         </p>
 

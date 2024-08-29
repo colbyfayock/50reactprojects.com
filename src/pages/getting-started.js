@@ -1,13 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import styles from '../styles/Home.module.scss';
-
 import Main from '../components/Main';
 import LogoHorizontal from '../components/LogoHorizontal';
 import Section from '../components/Section';
 import Container from '../components/Container';
-import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 
 export default function GettingStarted() {
@@ -20,11 +17,11 @@ export default function GettingStarted() {
       <Main>
 
         <Section backgroundColor="blue-dark" spacing="compact">
-          <Hero>
+          <Container className="text-white bg-brand-blue-dark">
             <Link href="/">
-              <LogoHorizontal />
+              <LogoHorizontal className="w-[50rem] h-auto" />
             </Link>
-          </Hero>
+          </Container>
         </Section>
 
         <Section>

@@ -9,8 +9,6 @@ import Container from '../components/Container';
 import Section from '../components/Section';
 import Article from '../components/Article';
 
-import styles from '@/styles/pages/Projects.module.scss';
-
 const TITLE = 'Projects';
 const DESCRIPTION = 'Use these 50 real-world project ideas to learn by doing including building an ecommerce store and a budget manager.';
 
@@ -34,30 +32,12 @@ export default function Projects({ projects }) {
 
   const hasActiveFilters = Object.keys(activeFilters.topics).filter(key => activeFilters.topics[key] === true).length > 0;
 
-  const filteredProjects = hasActiveFilters ? projects.filter(({ title: topicTitle }) => {
-    const topicState = activeFilters.topics[topicTitle];
-    return activeFilters.topics[topicTitle];
-  }) : projects;
+  const filteredProjects = hasActiveFilters ? projects.filter(({ title: topicTitle }) => activeFilters.topics[topicTitle]) : projects;
 
   const frontMatter = {
     title: TITLE,
     description: DESCRIPTION,
     path: '/projects/'
-  }
-
-  function handleOnChecklistChange({ currentTarget }) {
-    const isChecked = currentTarget.checked;
-    const value = currentTarget.value;
-
-    setActiveFilters(prev => {
-      return {
-        ...prev,
-        topics: {
-          ...prev.topics,
-          [value]: isChecked
-        }
-      }
-    });
   }
 
   return (
@@ -66,13 +46,13 @@ export default function Projects({ projects }) {
         <title key="title">Projects - 50 React Projects</title>
       </Head>
 
-      <Section className={styles.projects}>
+      <Section>
         <Container>
-          <h1>Projects to Start Building</h1>
+          <h1 className="text-5xl">Projects to Start Building</h1>
 
           <Article withSidebar={false}>
             <h2 className="sr-only">Project Ideas</h2>
-            <ul className={styles.projectsList}>
+            <ul>
               {filteredProjects.map(topic => {
                 const { projects, title } = topic;
                 return (
@@ -83,11 +63,11 @@ export default function Projects({ projects }) {
                         const { slug, path, title, description } = project;
                         return (
                           <li key={slug}>
-                            <Link href={path} className={styles.project}>
-                              <p className={styles.projectTitle}>
+                            <Link href={path}>
+                              <p>
                                 <strong>{ title }</strong>
                               </p>
-                              <p className={styles.projectDescription}>
+                              <p>
                                 { description }
                               </p>
                             </Link>
