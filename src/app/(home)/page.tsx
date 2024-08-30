@@ -28,6 +28,11 @@ const motionPreviewImages = {
 <meta property="og:type" content="book" key="og:type" />
 </Head> */}
 
+export const metadata = {
+  title: '50 Projects for React & the Static Web',
+  description: 'Learn by doing with this FREE ebook! Dive in with 50 projects complete with project briefs and wireframes.'
+}
+
 export default function Home() {
   return (
     <>

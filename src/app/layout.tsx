@@ -11,12 +11,7 @@ import './globals.css';
 const sourceSans3 = Source_Sans_3({
   subsets: ['latin'],
   display: 'swap',
-})
-
-export const metadata: Metadata = {
-  title: '50 Projects for React & the Static Web',
-  description: '-',
-};
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

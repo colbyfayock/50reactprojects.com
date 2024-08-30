@@ -6,9 +6,6 @@ import Article from '@/components/Article';
 import Link from 'next/link';
 import { FaAddressBook, FaBriefcase, FaFlask, FaLeaf, FaProjectDiagram, FaPuzzlePiece, FaRegClone, FaTools } from 'react-icons/fa';
 
-const TITLE = 'Projects';
-const DESCRIPTION = 'Use these 50 real-world project ideas to learn by doing including building an ecommerce store and a budget manager.';
-
 const TOPICS = [
   {
     title: 'Business & Real-World',
@@ -43,6 +40,11 @@ const TOPICS = [
     icon: <FaRegClone className="text-blue-500 w-5 md:w-6 h-auto" />
   },
 ];
+
+export const metadata = {
+  title: 'Projects - 50 Projects for React & the Static Web',
+  description: 'Use these 50 real-world project ideas to learn by doing including building an ecommerce store and a budget manager.'
+}
 
 export default async function Projects() {
   const projects = await getProjects();
