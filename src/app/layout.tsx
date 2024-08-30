@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { Source_Sans_3 } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
+import PlausibleProvider from 'next-plausible'
+
 
 import { GA_TRACKING_ID } from '@/lib/gtag';
 
@@ -35,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               `,
             }}
           />
+          <PlausibleProvider domain="50reactprojects.com" trackOutboundLinks={true} />
         </head>
         <body>
           { children }
