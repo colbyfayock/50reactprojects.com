@@ -1,11 +1,7 @@
-import { useSession } from 'next-auth/react';
-
 interface LoginRequiredProps extends React.ComponentPropsWithoutRef<'p'> {}
 
 const LoginRequired = ({ children, ...props }: LoginRequiredProps) => {
-  const { data: session } = useSession()
-
-  const isAuthorized = !!session?.user;
+  const isAuthorized = false; // !!session?.user;
 
   if ( !isAuthorized ) {
     return (

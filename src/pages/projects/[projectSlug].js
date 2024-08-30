@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Head from 'next/head';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
-import { useSession } from 'next-auth/react';
 
 import { getProjects, getProjectBySlug } from '@/lib/projects';
 
@@ -16,14 +15,14 @@ import ProjectSidebar from '@/components/ProjectSidebar';
 import Checklist from '@/components/Checklist';
 
 export default function Project({ source, frontMatter, path }) {
+  const session = false;
+
   const projectFrontMatter = {
     ...frontMatter,
     path
   }
 
   const title = `${ frontMatter.title } - 50 React Projects`;
-
-  const { data: session } = useSession();
 
   const [checkedItems, setCheckedItems] = useState([]);
 

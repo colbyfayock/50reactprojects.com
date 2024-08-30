@@ -8,12 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.3.6",
     "@mdx-js/loader": "^3.0.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.30",
     "gray-matter": "^4.0.3",
     "next": "^14.2.6",
-    "next-auth": "^4.24.7",
     "next-mdx-remote": "^5.0.0",
     "next-plausible": "^3.12.2",
     "path": "^0.12.7",
