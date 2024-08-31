@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'spacejelly-gray-dark': '#001523',
         'brand-blue-medium': '#0A64EC',
         'brand-blue-dark': '#100E4F',
         'brand-purple': '#9162BB',

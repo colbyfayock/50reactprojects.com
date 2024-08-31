@@ -10,7 +10,11 @@ import Button from '@/components/Button';
 
 const twitterAction = createTweetAction({
   message: [
-    `🤔 Need a new project idea?\n\n💥 Get this FREE ebook from @colbyfayock\n\n⚛️ 50 Projects for #ReactJS & the Static Web\n\n🔥 It’s packed with project briefs, layout ideas, and resources to get started\n\n#50reactprojects\n\n👉 https://50reactprojects.com`
+    'Found this FREE ebook from @colbyfayock',
+    '50 Projects for React & the Static Web',
+    'Includes project briefs, layout ideas, and resources to get started learning by doing',
+    'What are you going to build first?',
+    'https://50reactprojects.com',
   ]
 });
 
@@ -35,7 +39,7 @@ const ShareAnchor = ({ children, backgroundColor = 'blue' }: ShareAnchorProps) =
 
   return (
     <Section backgroundColor={backgroundColor} spacing="compact">
-      <Container className="flex items-center justify-center flex-col md:flex-row gap-6">
+      <Container className="flex items-center justify-center flex-col lg:flex-row gap-6">
         { children || <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center m-0">Love 50 React Projects?</h3> }
         <p className="flex justify-center">
           <Button onClick={handleOnTwitterClick} className="bg-blue-50 text-brand-blue-medium hover:bg-white border-white transition-colors duration-200 ease-in-out">

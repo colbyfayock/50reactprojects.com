@@ -25,9 +25,9 @@ const motionPreviewImages = {
 export default function Home() {
   return (
     <>
-      <Section className="py-12" backgroundColor="blue-dark">
+      <Section className="py-12 sm:py-24 md:py-32" backgroundColor="blue-dark">
         <Container className="text-white bg-brand-blue-dark">
-          <h1 className="flex items-center justify-center mb-6">
+          <h1 className="flex items-center justify-center -mt-4 mb-6">
             <LogoHorizontal className="w-full max-w-[50rem] h-auto -ml-4 sm:-ml-6 md:-ml-10" />
             <span className="sr-only">50 Projects for React &amp; the Static Web</span>
           </h1>

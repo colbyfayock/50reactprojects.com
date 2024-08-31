@@ -36,7 +36,7 @@ export default async function Projects({ params }: { params: { projectSlug: stri
         return (
           <Checklist
             {...props}
-            // checkable={!!session}
+            checkable={false}
             // checkedItems={checkedItems}
             // onChange={onChecklistChange}
           />
@@ -46,7 +46,10 @@ export default async function Projects({ params }: { params: { projectSlug: stri
   });
 
   return (
-    <Section className="[&_h2]:px-3 [&_h2]:py-2 [&_h2]:mt-8 [&_h2:first-child]:mt-0 [&_h2]:mb-4 [&_h2]:-mx-3" spacing="compact">
+    <Section
+      className={`
+        [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:px-3 [&_h2]:py-2 [&_h2]:mt-10 [&_h2:first-child]:mt-0 [&_h2]:mb-4
+      `} spacing="compact">
       <Container className="lg:flex lg:flex-wrap">
         { content }
       </Container>

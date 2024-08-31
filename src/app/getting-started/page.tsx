@@ -52,7 +52,7 @@ export default function GettingStarted() {
             Having trouble?
           </h2>
 
-          <h3 className="text-xl md:text-2xl mb-4">
+          <h3 className="text-xl md:text-2xl font-semibold mb-4">
             I did not get the email.
           </h3>
 
@@ -63,7 +63,7 @@ export default function GettingStarted() {
             trash or archive.
           </p>
 
-          <h3 className="text-xl text-2xl mb-4">
+          <h3 className="text-xl md:text-2xl font-semibold mb-4">
             Nothing is working, how can I get 50 React Projects?
           </h3>
 

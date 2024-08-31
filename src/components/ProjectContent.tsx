@@ -5,8 +5,9 @@ const ProjectContent = ({ children, ...props }: ProjectContentProps) => {
     <div
       {...props}
       className={`
-        lg:w-content-with-sidebar lg:pr-20 mb-12
+        lg:w-content-with-sidebar lg:pr-12 mb-12
         [&_h2]:text-white [&_h2]:bg-brand-purple
+        [&_p]:text-lg md:[&_p]:text-xl md:[&_p]:leading-8 [&_p]:px-2 [&_p]:my-3
       `}
     >
       { children }

@@ -1,39 +1,43 @@
 import React from 'react';
 import Link from 'next/link';
-// import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 
 import Section from '@/components/Section';
 import Container from '@/components/Container';
 import LogoHorizontal from '@/components/LogoHorizontal';
-import { cn } from '@/lib/util';
+import { FaGithub } from 'react-icons/fa';
 
-// import { buttonStyles } from '@/components/Button';
-// import { cn } from '@/lib/util';
+import Button from '@/components/Button';
 
-interface NavProps {
-  layout?: string;
-}
-
-const Nav = ({ layout = 'standard' }: NavProps) => {
+const Nav = () => {
   return (
     <nav className="text-white bg-brand-blue-dark [&_a]:block [&_a]:no-underline">
       <Section className="py-4 md:py-6">
-        <Container className={cn('flex justify-between items-center', layout === 'center' && 'justify-center')}>
+        <Container className="flex justify-between items-center">
           <div>
             <Link href="/">
               <LogoHorizontal className="w-60 h-auto" />
             </Link>
           </div>
-          {/* <ul className="flex items-center">
-            <li className="flex items-center">
-              <SignedOut>
-                <SignInButton className={cn(buttonStyles, 'text-sm px-3 py-1 font-semibold')} />
-              </SignedOut>
-              <SignedIn>
+          <ul className="flex items-center gap-6">
+            {/* <SignedOut>
+              <li className="flex items-center">
+                <SignInButton>
+                  <Button className="text-sm px-3 py-1 font-semibold">Sign In</Button>
+                </SignInButton>
+              </li>
+            </SignedOut> */}
+            <SignedIn>
+              <li className="flex items-center">
                 <UserButton />
-              </SignedIn>
+              </li>
+            </SignedIn>
+            <li className="flex items-center">
+              <a href="https://github.com/colbyfayock/50-projects-for-react-and-the-static-web" rel="noreferrer noopener">
+                <FaGithub className="w-6 h-auto" />
+              </a>
             </li>
-          </ul> */}
+          </ul>
         </Container>
       </Section>
     </nav>
