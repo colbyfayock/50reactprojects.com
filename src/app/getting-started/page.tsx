@@ -2,7 +2,8 @@ import Section from '@/components/Section';
 import Container from '@/components/Container';
 
 export const metadata = {
-  title: 'Getting Started - 50 Projects for React & the Static Web'
+  title: 'Getting Started - 50 Projects for React & the Static Web',
+  description: 'Ready to get started? Check your inbox for your copy of 50 React Projects!'
 }
 
 export default function GettingStarted() {

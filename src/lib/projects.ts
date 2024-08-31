@@ -1,51 +1,35 @@
 import { promises as fs } from 'fs';
 import path from 'path'
-import grayMatter from 'gray-matter';
 import { ReactNode } from 'react';
+import { PROJECT_TOPICS } from '@/data/projects';
 
 const PROJECTS_DIRECTORY = path.join(process.cwd(), 'src/projects');
 
 interface Project {
   slug: string;
   path: string;
-  file: {
-    filename: string;
-    content: string;
-  };
-  excerpt: string;
-  topic: string;
-  [key: string]: any;
+  mdx: string;
+  title?: string;
+  layout?: string;
+  topic?: string;
+  description?: string;
+}
+
+interface Topic {
+  title: string;
+  icon: ReactNode;
+  projects: Array<Project>;
 }
 
 /**
  * getProjects
  */
 
-export async function getProjects() {
+export async function getProjects(): Promise<Array<Project>> {
   const filenames = await fs.readdir(PROJECTS_DIRECTORY);
-
-  if ( !filenames || !Array.isArray(filenames) ) {
-    throw new Error('Failed to read project directory');
-  }
-
-  return await Promise.all(filenames.map(async filename => {
+  return Promise.all(filenames.map(async filename => {
     const slug = filename.replace('.mdx', '');
-
-    const filePath = path.join(PROJECTS_DIRECTORY, filename)
-    const content = await fs.readFile(filePath, 'utf8')
-
-    const matter = grayMatter(content);
-
-    return {
-      slug,
-      path: `/projects/${slug}`,
-      file: {
-        filename,
-        content
-      },
-      excerpt: matter.excerpt,
-      ...matter.data,
-    } as Project;
+    return getProjectBySlug(slug);
   }));
 }
 
@@ -53,14 +37,12 @@ export async function getProjects() {
  * getProjectBySlug
  */
 
-export async function getProjectBySlug(slug: string) {
-  const filePath = path.join(PROJECTS_DIRECTORY, `${slug}.mdx`);
-  const content = await fs.readFile(filePath, 'utf8');
-  const matter = grayMatter(content);
+export async function getProjectBySlug(slug: string): Promise<Project> {
+  const mdx = await fs.readFile(path.join(PROJECTS_DIRECTORY, `${slug}.mdx`), 'utf8');;
   return {
     slug,
-    filePath,
-    ...matter
+    path: `/projects/${slug}`,
+    mdx,
   }
 }
 
@@ -68,27 +50,25 @@ export async function getProjectBySlug(slug: string) {
  * groupProjectsByTopic
  */
 
-export function groupProjectsByTopic(projects: Array<Project>, topicGroups: Array<{ title: string; icon: ReactNode; }>) {
-  interface Topic {
-    title: string;
-    icon: ReactNode;
-    projects: Array<Project>;
-  }
-
+export function groupProjectsByTopic(projects: Array<Project>) {
   const topics: { [key: string]: Topic } = {};
 
   projects.forEach(project => {
-    if ( !topics[project.topic] ) {
-      const topic = topicGroups.find(({ title }) => title === project.topic);
-      if ( topic ) {
-        topics[project.topic] = {
-          ...topic,
-          projects: []
-        };
-      }
+    const projectTopic = project.topic || 'Unkonwn';
+
+    if ( !topics[projectTopic] ) {
+      const topic = PROJECT_TOPICS.find(({ title }) => title === projectTopic);
+
+      topics[projectTopic] = {
+        title: projectTopic,
+        icon: null,
+        projects: [],
+        ...topic,
+      };
     }
-    topics[project.topic].projects.push(project);
+
+    topics[projectTopic].projects.push(project);
   });
 
-  return topicGroups.map(({ title: key }) => topics[key]);
+  return PROJECT_TOPICS.map(({ title: key }) => topics[key]);
 }

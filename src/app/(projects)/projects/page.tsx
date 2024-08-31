@@ -1,54 +1,33 @@
+import { compileMDX } from 'next-mdx-remote/rsc';
+
 import { getProjects, groupProjectsByTopic } from '@/lib/projects';
 
 import Section from '@/components/Section';
 import Container from '@/components/Container';
 import Article from '@/components/Article';
 import Link from 'next/link';
-import { FaAddressBook, FaBriefcase, FaFlask, FaLeaf, FaProjectDiagram, FaPuzzlePiece, FaRegClone, FaTools } from 'react-icons/fa';
-
-const TOPICS = [
-  {
-    title: 'Business & Real-World',
-    icon: <FaBriefcase className="text-blue-500 w-5 md:w-6 h-auto -translate-y-[1px]" />
-  },
-  {
-    title: 'Fun & Interesting',
-    icon: <FaFlask className="text-blue-500 w-5 md:w-6 h-auto" />
-  },
-  {
-    title: 'Personal & Portfolio',
-    icon: <FaAddressBook className="text-blue-500 w-5 md:w-6 h-auto" />
-  },
-  {
-    title: 'Productivity',
-    icon: <FaLeaf className="text-blue-500 w-5 md:w-6 h-auto -translate-y-[1px]" />
-  },
-  {
-    title: 'Games & Puzzles',
-    icon: <FaPuzzlePiece className="text-blue-500 w-5 md:w-6 h-auto -translate-y-[1px] translate-x-[1px]" />
-  },
-  {
-    title: 'Tools & Libraries',
-    icon: <FaTools className="text-blue-500 w-5 md:w-6 h-auto" />
-  },
-  {
-    title: 'Project Add-Ons',
-    icon: <FaProjectDiagram className="text-blue-500 w-5 md:w-6 h-auto translate-y-[1px]" />
-  },
-  {
-    title: 'Clones',
-    icon: <FaRegClone className="text-blue-500 w-5 md:w-6 h-auto" />
-  },
-];
 
 export const metadata = {
-  title: 'Projects - 50 Projects for React & the Static Web',
+  title: 'Projects',
   description: 'Use these 50 real-world project ideas to learn by doing including building an ecommerce store and a budget manager.'
 }
 
 export default async function Projects() {
-  const projects = await getProjects();
-  const projectsBytopic = groupProjectsByTopic(projects, TOPICS);
+  const projectsMdx = await getProjects();
+  
+  const projects = await Promise.all(projectsMdx.map(async project => {
+    const { frontmatter } = await compileMDX({
+      source: project.mdx,
+      options: { parseFrontmatter: true },
+    });
+    return {
+      ...project,
+      ...frontmatter
+    }
+  }));
+
+  const projectsByTopic = groupProjectsByTopic(projects);
+
   return (
     <Section spacing="compact">
       <Container>
@@ -60,12 +39,17 @@ export default async function Projects() {
         <Article withSidebar={false}>
           <h2 className="sr-only">Project Ideas</h2>
           <ul className="grid gap-16 md:gap-24">
-            {projectsBytopic.map(topic => {
+            {projectsByTopic.map(topic => {
               const { projects, title, icon: icon } = topic;
               return (
                 <li key={title}>
                   <h3 className="flex items-center gap-4 text-2xl md:text-3xl font-bold mb-6 sm:mb-8 md:mb-10">
-                    { icon }
+                    <span className={`
+                      inline-flex justify-center items-center bg-brand-blue-dark rounded-full p-5 md:p-3
+                      [&_svg]:text-white
+                    `}>
+                      { icon }
+                    </span>
                     { title }
                   </h3>
 

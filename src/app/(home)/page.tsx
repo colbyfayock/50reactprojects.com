@@ -1,5 +1,3 @@
-"use client";
-
 import {
   FaBriefcase,
   FaAddressBook,
@@ -10,12 +8,12 @@ import {
   FaTools,
   FaRegClone
 } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 
 import LogoHorizontal from '@/components/LogoHorizontal';
 import Container from '@/components/Container';
 import Section from '@/components/Section';
 import FormEbook from '@/components/FormEbook';
+import MotionImage from '@/components/MotionImage';
 
 const motionPreviewImages = {
   whileHover: {
@@ -23,15 +21,6 @@ const motionPreviewImages = {
     zIndex: 20
   }
 }
-
-{/* <Head>
-<meta property="og:type" content="book" key="og:type" />
-</Head> */}
-
-// export const metadata = {
-//   title: '50 Projects for React & the Static Web',
-//   description: 'Learn by doing with this FREE ebook! Dive in with 50 projects complete with project briefs and wireframes.'
-// }
 
 export default function Home() {
   return (
@@ -66,7 +55,7 @@ export default function Home() {
           </p>
 
           <div className="relative w-full max-w-3xl h-36 sm:h-64 md:h-80 mx-auto my-0">
-            <motion.img
+            <MotionImage
               className="absolute top-6 sm:top-8 md:top-10 left-0 z-0 w-56 sm:w-80 md:w-96 h-auto rounded border border-zinc-100 shadow-[0_10px_14px_rgba(0,0,0,0.2)] hover:shadow-[0_50px_50px_rgba(0,0,0,0.2)] transition-shadow m-auto"
               width="612"
               height="792"
@@ -74,7 +63,7 @@ export default function Home() {
               alt="Example Ecommerce Store Project Brief"
               {...motionPreviewImages}
             />
-            <motion.img
+            <MotionImage
               className="absolute top-0 z-10 w-56 sm:w-80 md:w-96 h-auto rounded shadow-[0_10px_14px_rgba(0,0,0,0.2)] hover:shadow-[0_50px_50px_rgba(0,0,0,0.2)] transition-shadow m-auto inset-x-0"
               width="612"
               height="792"
@@ -82,7 +71,7 @@ export default function Home() {
               alt="Example Business and Real-world Cover"
               {...motionPreviewImages}
             />
-            <motion.img
+            <MotionImage
               className="absolute top-6 sm:top-8 md:top-10 right-0 z-0 w-56 sm:w-80 md:w-96 h-auto rounded border border-zinc-100 shadow-[0_10px_14px_rgba(0,0,0,0.2)] hover:shadow-[0_50px_50px_rgba(0,0,0,0.2)] transition-shadow m-auto"
               width="612"
               height="792"
