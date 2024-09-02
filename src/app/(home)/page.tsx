@@ -8,6 +8,8 @@ import {
   FaTools,
   FaRegClone
 } from 'react-icons/fa';
+import { sql } from 'drizzle-orm'
+import { db } from '@/db';
 
 import LogoHorizontal from '@/components/LogoHorizontal';
 import Container from '@/components/Container';
@@ -22,7 +24,9 @@ const motionPreviewImages = {
   }
 }
 
-export default function Home() {
+export default async function Home() {
+  const result = await db.execute(sql`SELECT current_database()`);
+  console.log('result', result.rows);
   return (
     <>
       <Section className="py-12 sm:py-24 md:py-32" backgroundColor="blue-dark">
