@@ -5,17 +5,17 @@ topic: 'Clones'
 description: 'Create a StackOverflow clone allowing questions and answers with code snippets.'
 ---
 
-import ProjectHeader from 'components/ProjectHeader';
-import ProjectContent from 'components/ProjectContent';
-import ProjectSidebar from 'components/ProjectSidebar';
-import Checklist from 'components/Checklist';
-import LoginRequired from 'components/LoginRequired';
+import ProjectHeader from '@/components/ProjectHeader';
+import ProjectContent from '@/components/ProjectContent';
+import ProjectSidebar from '@/components/ProjectSidebar';
+import Checklist from '@/components/Checklist';
+import LoginRequired from '@/components/LoginRequired';
 
 <ProjectHeader>
 
 # StackOverflow
 
-Create a <strong className="color-blue">StackOverflow</strong> clone allowing <strong className="color-purple">questions and answers</strong> with code snippets.
+Create a <strong className="text-brand-blue-medium">StackOverflow</strong> clone allowing <strong className="text-brand-purple">questions and answers</strong> with code snippets.
 
 </ProjectHeader>
 
@@ -31,7 +31,7 @@ Question and answer websites begin with a single thing — a question. This ques
 
 Add a form that creates a new question with a page and categorizes it with tags.
 
-<LoginRequired>
+<LoginRequired className="mt-10">
 
 ## Level 2
 
