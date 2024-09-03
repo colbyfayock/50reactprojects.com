@@ -8,8 +8,6 @@ import {
   FaTools,
   FaRegClone
 } from 'react-icons/fa';
-import { sql } from 'drizzle-orm'
-import { db } from '@/db';
 
 import LogoHorizontal from '@/components/LogoHorizontal';
 import Container from '@/components/Container';
@@ -25,8 +23,6 @@ const motionPreviewImages = {
 }
 
 export default async function Home() {
-  const result = await db.execute(sql`SELECT current_database()`);
-  console.log('result', result.rows);
   return (
     <>
       <Section className="py-12 sm:py-24 md:py-32" backgroundColor="blue-dark">
@@ -65,6 +61,7 @@ export default async function Home() {
               height="792"
               src="/images/50-react-projects-business-real-world-ecommerce-store.jpg"
               alt="Example Ecommerce Store Project Brief"
+              sizes="(min-width: 864px) 460px, 50vw"
               {...motionPreviewImages}
             />
             <MotionImage
@@ -73,6 +70,7 @@ export default async function Home() {
               height="792"
               src="/images/50-react-projects-cover-business-real-world.jpg"
               alt="Example Business and Real-world Cover"
+              sizes="(min-width: 864px) 460px, 50vw"
               {...motionPreviewImages}
             />
             <MotionImage
@@ -81,6 +79,7 @@ export default async function Home() {
               height="792"
               src="/images/50-react-projects-ecommerce-store-layout.jpg"
               alt="Example Ecommerce Store Design Layout"
+              sizes="(min-width: 864px) 460px, 50vw"
               {...motionPreviewImages}
             />
           </div>

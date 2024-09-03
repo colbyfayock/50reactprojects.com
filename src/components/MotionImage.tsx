@@ -1,19 +1,31 @@
 "use client";
 
+import { getImageProps, ImageProps } from 'next/image';
 import { motion, MotionProps } from 'framer-motion';
 
-interface MotionImageProps extends MotionProps {
-  alt?: string;
+type ImageWithMotionProps = MotionProps & ImageProps;
+
+interface MotionImageProps extends ImageWithMotionProps {
   className?: string;
-  height?: number | string;
-  src?: string;
-  width?: number | string;
 }
 
-const MotionImage = (props: MotionImageProps) => {
+const MotionImage = ({src, ...props }: MotionImageProps) => {
+  const { props: imageProps } = getImageProps({
+    src,
+    width: props.width,
+    height: props.height,
+    alt: props.alt,
+    sizes: props.sizes
+  })
+  console.log('imageProps, ', imageProps)
+
   return (
-    <motion.img {...props} />
-  )
+    <motion.img
+      {...props}
+      src={imageProps.src}
+      srcSet={imageProps.srcSet}
+    />
+  );;
 }
 
 export default MotionImage;

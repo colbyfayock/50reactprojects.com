@@ -85,7 +85,11 @@ export default async function ProjectPage({ params }: { params: { projectSlug: s
             To Do
           </h2>
 
-          <Checklist className="md:text-lg list-none px-2" items={checklist} />
+          <Checklist
+            className="md:text-lg list-none px-2"
+            items={checklist}
+            checkable={false}
+          />
 
           <h2 className="text-white bg-brand-blue-medium">
             Toolbox

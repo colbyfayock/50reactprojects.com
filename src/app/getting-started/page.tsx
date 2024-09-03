@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import Section from '@/components/Section';
 import Container from '@/components/Container';
 
@@ -35,12 +37,13 @@ export default function GettingStarted() {
             </p>
           </div>
 
-          <img
+          <Image
             className="hidden md:block rotate-1 rounded-lg shadow-xl border border-zinc-200"
             width="612"
             height="792"
             src="/images/50-react-projects-business-real-world-ecommerce-store.jpg"
             alt="Example Ecommerce Store Project Brief"
+            sizes="(min-width: 1280px) 498px, 50vw"
           />
         </Container>
       </Section>
