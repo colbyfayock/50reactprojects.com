@@ -25,7 +25,7 @@ export const metadata = {
   },
   description,
   openGraph: {
-    title: 'Acme',
+    title: siteName,
     description,
     url,
     type: 'website',
