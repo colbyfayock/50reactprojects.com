@@ -1,8 +1,10 @@
 "use client";
 
-import { SyntheticEvent } from 'react';
+import type { SyntheticEvent } from 'react';
+import { useState } from 'react';
 
 import * as gtag from '@/lib/gtag';
+import { useNotification } from '@/components/NotificationContext';
 
 import Button from '@/components/Button';
 import Input from '@/components/Input';
@@ -13,10 +15,22 @@ interface FormEbookProps extends React.ComponentProps<'form'> {
 }
 
 const FormEbook = ({ id, children, inputClassName, ...rest }: FormEbookProps) => {
-  function handleOnFormSubmit(e: SyntheticEvent) {
+  const [isLoading, setIsLoading] = useState(false);
+  const { showNotification } = useNotification();
+
+  async function handleOnFormSubmit(e: SyntheticEvent) {
     e.preventDefault();
 
+    if (isLoading) {
+      return;
+    }
+
+    setIsLoading(true);
+
     const target = e.target as HTMLFormElement;
+    const formData = new FormData(target);
+    const formAction = target.action;
+
 
     gtag.event({
       category: 'resource',
@@ -24,7 +38,30 @@ const FormEbook = ({ id, children, inputClassName, ...rest }: FormEbookProps) =>
       label: id
     });
 
-    target.submit();
+    try {
+      const response = await fetch(formAction, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      if (result.success) {
+        if (result.redirectUrl) {
+          window.location.href = result.redirectUrl;
+        }
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      showNotification('error', 'Something went wrong, please try again');
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -39,12 +76,12 @@ const FormEbook = ({ id, children, inputClassName, ...rest }: FormEbookProps) =>
         padding: "0",
         margin: "0",
         overflow: "hidden"
-      }} name="phone" value="" />
+      }} name="phone" defaultValue="" readOnly />
       <input type="hidden" name="redirect" value="https://50reactprojects.com/" />
       <input type="hidden" name="tags" value="location:spacejelly.dev,testtag" />
       <label className="sr-only" htmlFor="email">Email Address</label>
       <Input className={inputClassName} type="email" name="email" placeholder="Email Address" required />
-      <Button>Get It Free</Button>
+      <Button isLoading={isLoading}>Get It Free</Button>
     </form>
   )
 }

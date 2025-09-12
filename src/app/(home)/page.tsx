@@ -14,6 +14,7 @@ import Container from '@/components/Container';
 import Section from '@/components/Section';
 import FormEbook from '@/components/FormEbook';
 import MotionImage from '@/components/MotionImage';
+import Notification from '@/components/Notification';
 
 const motionPreviewImages = {
   whileHover: {
@@ -25,6 +26,7 @@ const motionPreviewImages = {
 export default function Home() {
   return (
     <>
+      <Notification />
       <Section className="py-12 sm:py-24 md:py-32" backgroundColor="blue-dark">
         <Container className="text-white bg-brand-blue-dark">
           <h1 className="flex items-center justify-center -mt-4 mb-6">
