@@ -28,16 +28,22 @@ const FormEbook = ({ id, children, inputClassName, ...rest }: FormEbookProps) =>
   }
 
   return (
-    <form id="hero" className="flex flex-col gap-4 sm:max-w-xs mx-auto" action="https://app.convertkit.com/forms/1588410/subscriptions" method="post" onSubmit={handleOnFormSubmit} {...rest}>
+    <form id="hero" className="flex flex-col gap-4 sm:max-w-xs mx-auto" method="POST" action="https://mailtik.spacejelly.dev/api/forms/50-projects-react" onSubmit={handleOnFormSubmit} {...rest}>
       { children }
-
-      <input className="hidden" type="checkbox" name="tags[]" value="1749930" checked readOnly />
-      <input className="hidden" type="checkbox" name="tags[]" value="1787072" checked readOnly />
-      
+      <input type="text" autoComplete="off" tabIndex={-1} style={{
+        position: "absolute",
+        left: "-9999px",
+        width: "0",
+        height: "0",
+        border: "0",
+        padding: "0",
+        margin: "0",
+        overflow: "hidden"
+      }} name="phone" value="" />
+      <input type="hidden" name="redirect" value="https://50reactprojects.com/" />
+      <input type="hidden" name="tags" value="location:spacejelly.dev,testtag" />
       <label className="sr-only" htmlFor="email">Email Address</label>
-
-      <Input className={inputClassName} type="email" name="email_address" placeholder="Email Address" required />
-      
+      <Input className={inputClassName} type="email" name="email" placeholder="Email Address" required />
       <Button>Get It Free</Button>
     </form>
   )
