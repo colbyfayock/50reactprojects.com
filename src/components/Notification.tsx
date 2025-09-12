@@ -14,12 +14,11 @@ const Notification = () => {
 
   useEffect(() => {
     const status = searchParams.get('status');
-    const message = searchParams.get('message');
 
-    if (status === 'success' && message) {
+    if (status === 'success') {
       setUrlNotification({
         type: 'success',
-        message: decodeURIComponent(message)
+        message: 'Check your email for the download link'
       });
     } else if (status === 'error') {
       setUrlNotification({

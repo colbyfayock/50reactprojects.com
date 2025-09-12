@@ -78,7 +78,7 @@ const FormEbook = ({ id, children, inputClassName, ...rest }: FormEbookProps) =>
         overflow: "hidden"
       }} name="phone" defaultValue="" readOnly />
       <input type="hidden" name="redirect" value="https://50reactprojects.com/" />
-      <input type="hidden" name="tags" value="location:spacejelly.dev,testtag" />
+      <input type="hidden" name="tags" value="location:50reactprojects.com" />
       <label className="sr-only" htmlFor="email">Email Address</label>
       <Input className={inputClassName} type="email" name="email" placeholder="Email Address" required />
       <Button isLoading={isLoading}>Get It Free</Button>
