@@ -5,4 +5,8 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
-module.exports = withPlausibleProxy()(nextConfig);
+module.exports = withPlausibleProxy({
+  src: 'https://plausible.io/js/script.outbound-links.js',
+  scriptPath: '/js/script.js',
+  apiPath: '/api/event',
+})(nextConfig);

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Source_Sans_3 } from 'next/font/google';
+import Script from 'next/script';
 import { ClerkProvider } from '@clerk/nextjs';
-import PlausibleProvider from 'next-plausible'
 
 
 import { GA_TRACKING_ID } from '@/lib/gtag';
@@ -70,7 +70,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               `,
             }}
           />
-          <PlausibleProvider domain="50reactprojects.com" trackOutboundLinks={true} />
+          <Script
+            async
+            defer
+            data-api="/api/event"
+            data-domain="50reactprojects.com"
+            src="/js/script.js"
+          />
+          <Script
+            id="plausible-init"
+            dangerouslySetInnerHTML={{
+              __html: 'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
+            }}
+          />
         </head>
         <body>
           { children }

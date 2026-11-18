@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import {
   FaBriefcase,
   FaAddressBook,
@@ -26,7 +27,9 @@ const motionPreviewImages = {
 export default function Home() {
   return (
     <>
-      <Notification />
+      <Suspense fallback={null}>
+        <Notification />
+      </Suspense>
       <Section className="py-12 sm:py-24 md:py-32" backgroundColor="blue-dark">
         <Container className="text-white bg-brand-blue-dark">
           <h1 className="flex items-center justify-center -mt-4 mb-6">

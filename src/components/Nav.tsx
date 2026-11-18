@@ -1,13 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
+import { Show, UserButton } from '@clerk/nextjs';
 
 import Section from '@/components/Section';
 import Container from '@/components/Container';
 import LogoHorizontal from '@/components/LogoHorizontal';
 import { FaGithub } from 'react-icons/fa';
 
-import Button from '@/components/Button';
 
 const Nav = () => {
   return (
@@ -20,18 +19,11 @@ const Nav = () => {
             </Link>
           </div>
           <ul className="flex items-center gap-6">
-            {/* <SignedOut>
-              <li className="flex items-center">
-                <SignInButton>
-                  <Button className="text-sm px-3 py-1 font-semibold">Sign In</Button>
-                </SignInButton>
-              </li>
-            </SignedOut> */}
-            <SignedIn>
+            <Show when="signed-in">
               <li className="flex items-center">
                 <UserButton />
               </li>
-            </SignedIn>
+            </Show>
             <li className="flex items-center">
               <a href="https://github.com/colbyfayock/50-projects-for-react-and-the-static-web" rel="noreferrer noopener">
                 <FaGithub className="w-6 h-auto" />
