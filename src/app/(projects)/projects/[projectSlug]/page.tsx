@@ -10,8 +10,9 @@ import LoginRequired from '@/components/LoginRequired';
 import ProjectSidebar from '@/components/ProjectSidebar';
 import Checklist from '@/components/Checklist';
 
-export async function generateMetadata({ params }: { params: { projectSlug: string; }}) {
-  const { mdx } = await getProjectBySlug(params.projectSlug);
+export async function generateMetadata({ params }: { params: Promise<{ projectSlug: string; }>}) {
+  const { projectSlug } = await params;
+  const { mdx } = await getProjectBySlug(projectSlug);
   const { frontmatter: { title, description } } = await compileMDX({
     source: mdx,
     options: { parseFrontmatter: true },
@@ -22,8 +23,9 @@ export async function generateMetadata({ params }: { params: { projectSlug: stri
   }
 }
 
-export default async function Projects({ params }: { params: { projectSlug: string; }}) {
-  const { mdx } = await getProjectBySlug(params.projectSlug);
+export default async function Projects({ params }: { params: Promise<{ projectSlug: string; }>}) {
+  const { projectSlug } = await params;
+  const { mdx } = await getProjectBySlug(projectSlug);
   const { content } = await compileMDX({
     source: mdx,
     options: { parseFrontmatter: true },
